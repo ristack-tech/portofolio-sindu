@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const projects = [
+  {
+    slug: "nexus-finance",
+    title: "Nexus Finance",
+    description: "Dashboard aplikasi keuangan dengan visualisasi data real-time dan sistem analitik prediktif.",
+    tags: ["REACT", "TYPESCRIPT", "D3.JS"],
+    year: "2024",
+    role: "Lead Frontend Developer",
+    client: "Nexus Financial Group"
+  },
+  {
+    slug: "velocity-media",
+    title: "Velocity Media",
+    description: "Platform content management untuk tim kreatif dengan workflow automation.",
+    tags: ["NEXT.JS", "NODE.JS", "POSTGRESQL"],
+    year: "2024",
+    role: "Full Stack Developer",
+    client: "Velocity Media Group"
+  },
+  {
+    slug: "forge-studio",
+    title: "Forge Studio",
+    description: "Website portfolio interaktif untuk studio desain dengan WebGL experiences.",
+    tags: ["THREE.JS", "GSAP", "TAILWIND"],
+    year: "2023",
+    role: "Creative Developer",
+    client: "Forge Design Studio"
+  },
+  {
+    slug: "pulse-health",
+    title: "Pulse Health",
+    description: "Mobile-first health tracking app dengan dashboard dan weekly reports.",
+    tags: ["REACT NATIVE", "FIREBASE", "FIGMA"],
+    year: "2023",
+    role: "Mobile Developer & UI/UX Designer",
+    client: "Pulse Health Inc"
+  }
+];
+---
+
+<Layout title="Projects | Sindu Aditya">
+  <main class="pt-24 pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Header -->
+      <div class="mb-16">
+        <a href="/#work" class="inline-flex items-center gap-2 font-mono text-sm font-bold mb-8 hover:text-[#0058be] transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+          BACK TO HOME
+        </a>
+        <div class="flex items-center gap-6 mb-6">
+          <span class="font-mono text-xs font-bold bg-black text-white px-4 py-2">01</span>
+          <h1 class="font-display text-5xl md:text-7xl font-extrabold">ALL PROJECTS</h1>
+        </div>
+        <p class="font-body text-xl text-[#424754] max-w-2xl">Koleksi project yang udah aku kerjakan dari 2018 sampai sekarang. Klik untuk lihat detail.</p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        {projects.map((project) => (
+          <a href={`/projects/${project.slug}`} class="work-card group block bg-white border-[4px] border-black shadow-[6px_6px_0_0_#000] hover:shadow-[10px_10px_0_0_#000] hover:-translate-x-2 hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div class="h-80 bg-[#e8e8e8] border-b-[4px] border-black relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-full h-full bg-gradient-to-br from-[#e8e8e8] to-[#d0d0d0] flex items-center justify-center">
+                  <span class="font-display text-8xl font-extrabold text-[#c2c6d6]">{project.title.charAt(0)}</span>
+                </div>
+              </div>
+              <div class="absolute top-4 right-4 font-mono text-xs font-bold text-[#727785]">{project.year}</div>
+              <div class="work-overlay absolute inset-0 bg-[#0058be]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="font-mono text-sm font-bold text-white border-[2px] border-white px-6 py-3">LIHAT PROJECT</span>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <div class="flex flex-wrap gap-2 mb-4">
+                {project.tags.map(tag => (
+                  <span class="font-mono text-xs font-bold bg-[#d8e2ff] text-[#001a42] px-3 py-1 border-[2px] border-black">{tag}</span>
+                ))}
+              </div>
+              <h2 class="font-display text-3xl font-bold mb-2 group-hover:text-[#0058be] transition-colors">{project.title}</h2>
+              <p class="font-body text-[#424754] leading-relaxed mb-4">{project.description}</p>
+              <div class="pt-4 border-t-[2px] border-black">
+                <span class="font-mono text-xs text-[#727785]">ROLE: </span>
+                <span class="font-mono text-xs font-bold text-[#1a1c1c]">{project.role}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Back Link -->
+      <div class="text-center pt-8 border-t-[4px] border-black">
+        <a href="/#work" class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-mono text-sm font-bold border-[4px] border-black hover:bg-[#0058be] transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+          BACK TO HOME
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

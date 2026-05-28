@@ -1,0 +1,68 @@
+---
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#f9f9f9]/95 backdrop-blur-sm border-b-[4px] border-black">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+    <a href="/" class="font-display text-2xl font-extrabold tracking-tight">SA.</a>
+    <nav class="hidden md:flex gap-8">
+      <a href="#work" class="font-mono text-xs font-bold tracking-widest hover:text-[#0058be] transition-colors relative group">WORK<span class="nav-underline"></span></a>
+      <a href="#about" class="font-mono text-xs font-bold tracking-widest hover:text-[#0058be] transition-colors relative group">ABOUT<span class="nav-underline"></span></a>
+      <a href="#experience" class="font-mono text-xs font-bold tracking-widest hover:text-[#0058be] transition-colors relative group">EXPERIENCE<span class="nav-underline"></span></a>
+      <a href="#contact" class="font-mono text-xs font-bold tracking-widest hover:text-[#0058be] transition-colors relative group">CONTACT<span class="nav-underline"></span></a>
+    </nav>
+    <button id="mobile-menu-btn" class="md:hidden border-[2px] border-black p-2 bg-white" aria-label="Toggle menu">
+      <svg class="w-6 h-6 menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-[#f9f9f9] border-t-[4px] border-black">
+    <nav class="flex flex-col p-6 gap-4">
+      <a href="#work" class="mobile-nav-link font-mono text-sm font-bold tracking-widest hover:text-[#0058be] transition-colors py-2 border-b border-black">WORK</a>
+      <a href="#about" class="mobile-nav-link font-mono text-sm font-bold tracking-widest hover:text-[#0058be] transition-colors py-2 border-b border-black">ABOUT</a>
+      <a href="#experience" class="mobile-nav-link font-mono text-sm font-bold tracking-widest hover:text-[#0058be] transition-colors py-2 border-b border-black">EXPERIENCE</a>
+      <a href="#contact" class="mobile-nav-link font-mono text-sm font-bold tracking-widest hover:text-[#0058be] transition-colors py-2">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav-underline {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s;
+  }
+  .group:hover .nav-underline {
+    width: 100%;
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuBtn?.querySelector('.menu-icon');
+  const closeIcon = menuBtn?.querySelector('.close-icon');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+</script>
