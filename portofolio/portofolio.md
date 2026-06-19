@@ -2,7 +2,7 @@
 
 **Backend Engineer & Technical Project Lead**
 
-> Saya ubah masalah jadi sistem yang dipakai.
+> Design business solutions that deliver impact.
 
 ---
 
@@ -73,6 +73,14 @@ Backend engineer dan technical project lead dengan rekam jejak menerjemahkan mas
 **Laravel Developer** — Januari 2022 – April 2022
 
 - Mempelajari dan mengaplikasikan framework Laravel pada fitur CRUD dengan arsitektur MVC, membiasakan diri dengan standar Clean Code untuk aplikasi yang terstruktur dan maintainable.
+
+### Infradigital Foundation
+
+**Cyber Security Student** — Agustus 2021 – November 2021 | Remote
+
+- Memperdalam dasar cybersecurity — identifikasi celah keamanan pada aplikasi web dan respon terhadap serangan siber.
+- Mengembangkan keterampilan pentesting menggunakan Kali Linux, memahami strategi Red Team (offensive) dan Blue Team (defensive).
+- Fokus pada praktik secure coding dan defensive strategies untuk memperkuat keamanan aplikasi web — fondasi awal yang sekarang melekat di setiap produk yang saya bangun: backend yang tidak aman sama saja bohong.
 
 ---
 
@@ -157,6 +165,8 @@ Backend engineer dan technical project lead dengan rekam jejak menerjemahkan mas
 **Datastores:** MySQL, PostgreSQL, Supabase, Firebase, AppWrite
 
 **IoT & Realtime:** MQTT (Mosquitto), WebSockets, REST API, pipeline data sensor
+
+**Security:** Web Pentesting, Kali Linux, Red/Blue Team mindset, Secure Coding
 
 **Infra & Tools:** Docker, Linux (Kali/Debian), Git/GitHub, GitHub Projects, Trello
 

@@ -3,7 +3,8 @@ const skills = [
   { category: "Backend & Bahasa", items: ["PHP", "JavaScript (Node.js)", "Python", "SQL"] },
   { category: "Framework & Library", items: ["Laravel", "Express", "React", "React Native", "Tailwind CSS"] },
   { category: "Database & Storage", items: ["MySQL", "PostgreSQL", "Supabase", "Firebase", "AppWrite"] },
-  { category: "IoT & Realtime", items: ["MQTT (Mosquitto)", "WebSockets", "REST API", "Pipeline sensor"] }
+  { category: "IoT & Realtime", items: ["MQTT (Mosquitto)", "WebSockets", "Pipeline sensor"] },
+  { category: "Security & Defense", items: ["Web Pentesting", "Kali Linux", "Red/Blue Team mindset", "Secure Coding"] }
 ];
 ---
 
@@ -48,10 +49,10 @@ const skills = [
 
           <div class="about-text space-y-6 font-body text-lg text-[#424754] leading-relaxed">
             <p>
-              Perjalanan saya mulai dari kepanitiaan HIMTI UDINUS — belajar memimpin tim 55 orang untuk acara nasional. Dari situ saya sadar: masalah yang paling menarik selalu yang ada di lapangan, bukan yang ada di tutorial.
+              Perjalanan saya mulai dari SMK Rekayasa Perangkat Lunak, lalu mendalami cybersecurity dasar di Infradigital Foundation — di situ saya pertama kali sadar: backend yang tidak aman sama saja bohong. Mindset itu yang saya bawa sampai sekarang, sambil terus memimpin tim dan membangun produk di HIMTI UDINUS, magang Laravel, sampai akhirnya memimpin delivery di Bengkel Koding dan RISTACK.
             </p>
             <p>
-              Sejak 2022 saya magang sebagai Laravel developer, lalu memimpin tim untuk produk yang dipakai ratusan orang — ERP modular untuk lini produksi manufaktur, sistem fleet IoT dengan MQTT, sampai platform daur ulang yang masuk Top 10 ASEAN. Backend saya pilih karena di sanalah keputusan arsitektur menentukan apakah produk benar-benar bisa jalan atau cuma jadi demo.
+              Sejak 2022 saya magang sebagai Laravel developer, lalu memimpin tim untuk produk yang dipakai ratusan orang — ERP modular untuk lini produksi manufaktur, sistem fleet IoT dengan MQTT, sampai platform daur ulang yang masuk Top 10 ASEAN. Backend saya pilih karena di sanalah keputusan arsitektur menentukan apakah produk benar-benar bisa jalan atau cuma jadi demo. Dan karena latar belakang cybersecurity itu, setiap sistem yang saya bangun bukan cuma jalan, tapi juga aman.
             </p>
             <p>
               Sekarang saya terbuka untuk peran backend engineer, technical project lead, atau system designer di tim yang serius mengirim produk ke produksi.
@@ -60,7 +61,7 @@ const skills = [
 
           <div class="skills-section mt-12 pt-8 border-t-[4px] border-black">
             <h4 class="font-mono text-xs font-bold tracking-widest mb-6">TECHNICAL STACK</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {skills.map((skill, index) => (
                 <div class="skill-card bg-[#f3f3f3] border-[2px] border-black p-4">
                   <span class="font-mono text-xs font-bold text-[#0058be] block mb-2">{skill.category}</span>
