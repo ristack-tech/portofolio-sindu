@@ -1,32 +1,44 @@
 ---
 const projects = [
   {
-    slug: "nexus-finance",
-    title: "Nexus Finance",
-    description: "Dashboard aplikasi keuangan dengan visualisasi data real-time dan sistem analitik prediktif.",
-    tags: ["REACT", "TYPESCRIPT", "D3.JS"],
-    year: "2024"
+    slug: "suite-aplikasi-bisnis",
+    title: "Suite Aplikasi Bisnis Modular",
+    client: "PT. Lims Yanwo Indonesia",
+    problem: "Lini produksi masih jalan di atas kertas dan spreadsheet — QC, inventory, absensi, payroll terpisah-pisah.",
+    outcome: "ERP modular 4-modul (QC, Inventory, Absensi, Payroll) yang dipakai tim operasional setiap hari.",
+    tags: ["LARAVEL", "MULTI-MODUL", "ERP"],
+    year: "2025",
+    role: "Full-Stack Engineer & PM"
   },
   {
-    slug: "velocity-media",
-    title: "Velocity Media",
-    description: "Platform content management untuk tim kreatif dengan workflow automation.",
-    tags: ["NEXT.JS", "NODE.JS", "POSTGRESQL"],
-    year: "2024"
+    slug: "fleettrack",
+    title: "FleetTrack",
+    client: "Lab IoT Nexa",
+    problem: "Sensor armada IoT menghasilkan data real-time yang harus sampai ke dashboard dengan latensi rendah dan stabil.",
+    outcome: "Backend MQTT-based yang menjembatani hardware dengan dashboard — siap untuk armada dalam skala harian.",
+    tags: ["LARAVEL", "MQTT", "IOT"],
+    year: "2025",
+    role: "Backend Engineer"
   },
   {
-    slug: "forge-studio",
-    title: "Forge Studio",
-    description: "Website portfolio interaktif untuk studio desain dengan WebGL experiences.",
-    tags: ["THREE.JS", "GSAP", "TAILWIND"],
-    year: "2023"
+    slug: "top-fik",
+    title: "TOP FIK",
+    client: "Bengkel Koding",
+    problem: "Sistem informasi akademik butuh melayani banyak fakultas dengan kebutuhan berbeda dari satu basis kode.",
+    outcome: "Platform multi-tenant yang skalabel — diorkestrasi lintas tim backend, frontend, dan mobile.",
+    tags: ["LARAVEL", "MULTI-TENANT", "PM"],
+    year: "2025",
+    role: "Project Manager & Backend"
   },
   {
-    slug: "pulse-health",
-    title: "Pulse Health",
-    description: "Mobile-first health tracking app dengan dashboard dan weekly reports.",
-    tags: ["REACT NATIVE", "FIREBASE", "FIGMA"],
-    year: "2023"
+    slug: "klora",
+    title: "Klora",
+    client: "ECOTHON 2024 (Top 10 ASEAN)",
+    problem: "Pengelolaan sampah masih manual — tidak ada cara mudah menjadwalkan penjemputan dan memberi insentif ke pengguna.",
+    outcome: "Platform daur ulang web + mobile dari nol, masuk 10 besar ASEAN. Estimasi nilai, penjadwalan, konversi poin.",
+    tags: ["REACT NATIVE", "APPWRITE", "BAAAS"],
+    year: "2024",
+    role: "Core Team Lead"
   }
 ];
 ---
@@ -37,7 +49,7 @@ const projects = [
       <span class="font-mono text-xs font-bold bg-black text-white px-4 py-2">01</span>
       <div>
         <h2 class="font-display text-4xl md:text-5xl font-extrabold">SELECTED WORK</h2>
-        <p class="font-body text-[#424754] mt-1">Project terbaru yang udah selesai</p>
+        <p class="font-body text-[#424754] mt-1">Setiap produk dimulai dari masalah. Ini yang sudah saya bangun dari sketsa sampai dipakai.</p>
       </div>
     </div>
 
@@ -63,7 +75,9 @@ const projects = [
               ))}
             </div>
             <h3 class="font-display text-2xl font-bold mb-2 group-hover:text-[#0058be] transition-colors">{project.title}</h3>
-            <p class="font-body text-[#424754] leading-relaxed">{project.description}</p>
+            <p class="font-mono text-xs text-[#727785] mb-3">{project.role} · {project.client}</p>
+            <p class="font-body text-[#1a1c1c] leading-relaxed mb-3"><span class="font-bold">Masalah:</span> {project.problem}</p>
+            <p class="font-body text-[#424754] leading-relaxed"><span class="font-bold text-[#0058be]">Hasil:</span> {project.outcome}</p>
           </div>
         </a>
       ))}

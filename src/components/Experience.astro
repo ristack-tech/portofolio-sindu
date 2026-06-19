@@ -1,8 +1,61 @@
 ---
 const experience = [
-  { role: "Senior Frontend Developer", company: "TechCorp Indonesia", period: "2022 — Sekarang" },
-  { role: "UI/UX Designer & Developer", company: "Creative Agency Jakarta", period: "2020 — 2022" },
-  { role: "Freelance Developer", company: "Self-Employed", period: "2018 — 2020" }
+  {
+    role: "Project Manager & Backend Developer",
+    company: "Bengkel Koding",
+    period: "Agustus 2025 — Sekarang",
+    location: "Yogyakarta",
+    summary: "Memimpin delivery TOP FIK (sistem informasi akademik multi-tenant) — merancang database, mengoordinasikan tim backend/frontend/mobile."
+  },
+  {
+    role: "Project Manager & Full-Stack Developer",
+    company: "RISTACK",
+    period: "November 2025 — Sekarang",
+    location: "Remote",
+    summary: "Memimpin aplikasi bisnis internal end-to-end, menjadi penghubung klien dan mengoordinasikan tim teknis."
+  },
+  {
+    role: "Teaching Assistant — Laravel & MVC",
+    company: "Universitas Dian Nuswantoro",
+    period: "Februari 2025 — Juni 2025",
+    location: "Semarang",
+    summary: "Mengampu praktikum Laravel untuk 30+ mahasiswa, mengevaluasi proyek akhir dan standar full-stack."
+  },
+  {
+    role: "Research Assistant — Backend IoT",
+    company: "Lab IoT Nexa",
+    period: "Februari 2025 — Juni 2025",
+    location: "Semarang",
+    summary: "Membangun infrastruktur backend FleetTrack — MQTT pipeline untuk data sensor armada real-time."
+  },
+  {
+    role: "Core Team Lead",
+    company: "Klora",
+    period: "Maret 2024 — Januari 2025",
+    location: "Indonesia",
+    summary: "Membangun platform daur ulang web + mobile dari nol — finalis Top 10 ASEAN ECOTHON 2024."
+  },
+  {
+    role: "Project Manager — Semnasti 2024",
+    company: "HIMTI UDINUS",
+    period: "Agustus 2024 — Agustus 2025",
+    location: "Semarang",
+    summary: "Memimpin tim 55 orang untuk acara nasional 550+ peserta di MG Setos Hotel — partnership dengan 4U Security."
+  },
+  {
+    role: "Laravel Developer",
+    company: "PT Sinergi Inovasi Tekno",
+    period: "November 2023 — Februari 2024",
+    location: "Remote",
+    summary: "Mengerjakan dua proyek paralel (company profile + aplikasi manajemen surat) di tim remote, Clean Code & MVC."
+  },
+  {
+    role: "Laravel Developer",
+    company: "PT Dian Nuswantoro Teknologi & Informasi",
+    period: "Januari 2022 — April 2022",
+    location: "Semarang",
+    summary: "Implementasi fitur CRUD dengan arsitektur MVC, membangun fondasi Clean Code untuk aplikasi yang maintainable."
+  }
 ];
 ---
 
@@ -12,24 +65,26 @@ const experience = [
       <span class="font-mono text-xs font-bold bg-black text-white px-4 py-2">03</span>
       <div>
         <h2 class="font-display text-4xl md:text-5xl font-extrabold">EXPERIENCE</h2>
-        <p class="font-body text-[#424754] mt-1">Perjalanan karir</p>
+        <p class="font-body text-[#424754] mt-1">Perjalanan dari kepanitiaan, magang, sampai memimpin produk di produksi.</p>
       </div>
     </div>
 
-    <div class="space-y-8">
+    <div class="space-y-6">
       {experience.map((exp, index) => (
-        <div class="exp-item grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div class="exp-item grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           <div class="md:col-span-3 exp-period">
-            <span class="font-mono text-xs font-bold text-[#727785]">{exp.period}</span>
+            <span class="font-mono text-xs font-bold text-[#727785] block">{exp.period}</span>
+            <span class="font-mono text-xs text-[#727785] block mt-1">{exp.location}</span>
           </div>
           <div class="md:col-span-9 bg-white border-[4px] border-black p-6 exp-card">
-            <div class="flex items-start justify-between flex-wrap gap-4">
+            <div class="flex items-start justify-between flex-wrap gap-4 mb-3">
               <div>
                 <h4 class="font-display text-xl font-bold">{exp.role}</h4>
                 <p class="font-body text-[#0058be] font-medium">{exp.company}</p>
               </div>
               <span class="exp-badge font-mono text-xs font-bold bg-[#d8e2ff] text-[#001a42] px-3 py-1 border-[2px] border-black">{String(index + 1).padStart(2, '0')}</span>
             </div>
+            <p class="font-body text-[#1a1c1c] leading-relaxed">{exp.summary}</p>
           </div>
         </div>
       ))}

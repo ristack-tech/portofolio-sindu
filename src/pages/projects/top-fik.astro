@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const project = {
+  title: "TOP FIK",
+  client: "Bengkel Koding",
+  description: "Platform sistem informasi akademik multi-tenant — satu basis kode yang melayani banyak fakultas dengan kebutuhan berbeda.",
+  tags: ["LARAVEL", "MULTI-TENANT", "PROJECT MANAGEMENT"],
+  year: "2025",
+  role: "Project Manager & Backend Engineer",
+  problem: "Sistem informasi akademik melayani banyak fakultas, masing-masing dengan requirement berbeda (kurikulum, jadwal, struktur organisasi, alur approval). Membangun sistem terpisah per fakultas akan butuh tim besar dan biaya tinggi; satu sistem monolitik tanpa isolasi akan cepat jadi kusut.",
+  role_long: "Project manager dan backend engineer — mengoordinasikan tim backend, frontend, mobile, dan pihak eksternal. Merancang arsitektur multi-tenant, memimpin discovery kebutuhan lintas fakultas, dan mengawal delivery dari sketsa sampai deployment.",
+  solution: "Arsitektur multi-tenant di atas Laravel — setiap fakultas adalah tenant dengan data terisolasi, konfigurasi sendiri, tapi berjalan di satu basis kode. Skema database dirancang untuk mendukung kebutuhan yang dinamis tanpa perubahan struktur per tenant. Ekstraksi data otomatis untuk laporan periodik.",
+  features: [
+    "Arsitektur multi-tenant dengan isolasi data per fakultas",
+    "Konfigurasi per-tenant (kurikulum, jadwal, alur approval)",
+    "Modul akademik: KRS, KHS, jadwal, presensi",
+    "Ekstraksi data otomatis untuk laporan periodik",
+    "REST API untuk integrasi dengan mobile & sistem eksternal",
+    "Optimasi legacy code dari sistem monolitik sebelumnya"
+  ],
+  techStack: ["Laravel", "MySQL", "Multi-tenant architecture", "REST API", "Tailwind CSS"],
+  outcome: "Platform multi-tenant yang skalabel — diorkestrasi lintas tim backend, frontend, dan mobile. Satu deployment melayani banyak fakultas tanpa duplikasi kode, dengan ruang untuk konfigurasi kebutuhan masing-masing."
+};
+---
+
+<Layout title={`${project.title} | Sindu Aditya`}>
+  <main class="pt-24 pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <a href="/#work" class="inline-flex items-center gap-2 font-mono text-sm font-bold mb-8 hover:text-[#0058be] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+        </svg>
+        BACK TO WORK
+      </a>
+
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          {project.tags.map(tag => (
+            <span class="font-mono text-xs font-bold bg-[#d8e2ff] text-[#001a42] px-3 py-1 border-[2px] border-black">{tag}</span>
+          ))}
+        </div>
+        <h1 class="font-display text-4xl md:text-6xl font-extrabold leading-tight mb-4">{project.title}</h1>
+        <p class="font-mono text-sm text-[#727785] mb-6">{project.role} · {project.client} · {project.year}</p>
+        <p class="font-body text-xl text-[#424754] max-w-3xl leading-relaxed">{project.description}</p>
+      </div>
+
+      <section class="mb-16 bg-[#f3f3f3] border-[4px] border-black border-l-[8px] p-8 shadow-[6px_6px_0_0_#000]">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">01 · MASALAH</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Satu kode, banyak fakultas, requirement berbeda.</h2>
+        <p class="font-body text-lg text-[#1a1c1c] leading-relaxed">{project.problem}</p>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">02 · PERAN SAYA</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">PM + backend engineer yang mengorkestrasi banyak tim.</h2>
+        <p class="font-body text-lg text-[#424754] leading-relaxed">{project.role_long}</p>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">03 · SOLUSI</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Arsitektur multi-tenant dengan isolasi data.</h2>
+        <p class="font-body text-lg text-[#424754] leading-relaxed">{project.solution}</p>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">04 · FITUR UTAMA</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-6">Satu deployment, banyak tenant.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {project.features.map((feature, i) => (
+            <div class="bg-white border-[4px] border-black p-6 flex gap-4 items-start">
+              <span class="font-mono text-xs font-bold text-[#0058be] shrink-0 mt-1">{String(i + 1).padStart(2, '0')}</span>
+              <p class="font-body text-[#1a1c1c] leading-relaxed">{feature}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">05 · TECH STACK</span>
+        <div class="flex flex-wrap gap-3">
+          {project.techStack.map(tech => (
+            <span class="font-mono text-sm font-bold bg-black text-white px-4 py-2 border-[2px] border-black">{tech}</span>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16 bg-[#0058be] text-white border-[4px] border-black p-8 shadow-[6px_6px_0_0_#000]">
+        <span class="font-mono text-xs font-bold block mb-3">06 · HASIL</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4 leading-tight">Platform yang menyatukan banyak fakultas.</h2>
+        <p class="font-body text-lg leading-relaxed">{project.outcome}</p>
+      </section>
+
+      <div class="text-center pt-8 border-t-[4px] border-black">
+        <a href="/projects" class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-mono text-sm font-bold border-[4px] border-black hover:bg-[#0058be] transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+          SEMUA PROJECT
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

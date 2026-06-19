@@ -3,40 +3,44 @@ import Layout from '../../layouts/Layout.astro';
 
 const projects = [
   {
-    slug: "nexus-finance",
-    title: "Nexus Finance",
-    description: "Dashboard aplikasi keuangan dengan visualisasi data real-time dan sistem analitik prediktif.",
-    tags: ["REACT", "TYPESCRIPT", "D3.JS"],
+    slug: "suite-aplikasi-bisnis",
+    title: "Suite Aplikasi Bisnis Modular",
+    client: "PT. Lims Yanwo Indonesia",
+    description: "ERP modular 4-modul (QC, Inventory, Absensi, Payroll) untuk lini produksi manufaktur.",
+    problem: "Lini produksi masih jalan di atas kertas dan spreadsheet — semua proses terpisah-pisah.",
+    tags: ["LARAVEL", "MULTI-MODUL", "ERP"],
+    year: "2025",
+    role: "Full-Stack Engineer & PM"
+  },
+  {
+    slug: "fleettrack",
+    title: "FleetTrack",
+    client: "Lab IoT Nexa",
+    description: "Backend MQTT-based untuk sistem fleet management IoT — pelacakan armada real-time.",
+    problem: "Sensor armada IoT menghasilkan data real-time yang harus sampai ke dashboard dengan latensi rendah dan stabil.",
+    tags: ["LARAVEL", "MQTT", "IOT"],
+    year: "2025",
+    role: "Backend Engineer"
+  },
+  {
+    slug: "top-fik",
+    title: "TOP FIK",
+    client: "Bengkel Koding",
+    description: "Platform multi-tenant untuk sistem informasi akademik lintas fakultas.",
+    problem: "Sistem informasi akademik butuh melayani banyak fakultas dengan kebutuhan berbeda dari satu basis kode.",
+    tags: ["LARAVEL", "MULTI-TENANT", "PM"],
+    year: "2025",
+    role: "Project Manager & Backend"
+  },
+  {
+    slug: "klora",
+    title: "Klora",
+    client: "ECOTHON 2024 (Top 10 ASEAN)",
+    description: "Platform daur ulang web + mobile dengan penjadwalan penjemputan dan konversi poin.",
+    problem: "Pengelolaan sampah masih manual — tidak ada cara mudah menjadwalkan penjemputan dan memberi insentif ke pengguna.",
+    tags: ["REACT NATIVE", "APPWRITE", "BAAAS"],
     year: "2024",
-    role: "Lead Frontend Developer",
-    client: "Nexus Financial Group"
-  },
-  {
-    slug: "velocity-media",
-    title: "Velocity Media",
-    description: "Platform content management untuk tim kreatif dengan workflow automation.",
-    tags: ["NEXT.JS", "NODE.JS", "POSTGRESQL"],
-    year: "2024",
-    role: "Full Stack Developer",
-    client: "Velocity Media Group"
-  },
-  {
-    slug: "forge-studio",
-    title: "Forge Studio",
-    description: "Website portfolio interaktif untuk studio desain dengan WebGL experiences.",
-    tags: ["THREE.JS", "GSAP", "TAILWIND"],
-    year: "2023",
-    role: "Creative Developer",
-    client: "Forge Design Studio"
-  },
-  {
-    slug: "pulse-health",
-    title: "Pulse Health",
-    description: "Mobile-first health tracking app dengan dashboard dan weekly reports.",
-    tags: ["REACT NATIVE", "FIREBASE", "FIGMA"],
-    year: "2023",
-    role: "Mobile Developer & UI/UX Designer",
-    client: "Pulse Health Inc"
+    role: "Core Team Lead"
   }
 ];
 ---
@@ -54,9 +58,9 @@ const projects = [
         </a>
         <div class="flex items-center gap-6 mb-6">
           <span class="font-mono text-xs font-bold bg-black text-white px-4 py-2">01</span>
-          <h1 class="font-display text-5xl md:text-7xl font-extrabold">ALL PROJECTS</h1>
+          <h1 class="font-display text-5xl md:text-7xl font-extrabold">SEMUA PROJECT</h1>
         </div>
-        <p class="font-body text-xl text-[#424754] max-w-2xl">Koleksi project yang udah aku kerjakan dari 2018 sampai sekarang. Klik untuk lihat detail.</p>
+        <p class="font-body text-xl text-[#424754] max-w-2xl">Setiap produk dimulai dari masalah. Koleksi project yang sudah saya bangun dari sketsa sampai live di produksi.</p>
       </div>
 
       <!-- Projects Grid -->
@@ -82,10 +86,12 @@ const projects = [
                 ))}
               </div>
               <h2 class="font-display text-3xl font-bold mb-2 group-hover:text-[#0058be] transition-colors">{project.title}</h2>
+              <p class="font-mono text-xs text-[#727785] mb-3">{project.role} · {project.client}</p>
+              <p class="font-body text-[#1a1c1c] leading-relaxed mb-3"><span class="font-bold">Masalah:</span> {project.problem}</p>
               <p class="font-body text-[#424754] leading-relaxed mb-4">{project.description}</p>
               <div class="pt-4 border-t-[2px] border-black">
-                <span class="font-mono text-xs text-[#727785]">ROLE: </span>
-                <span class="font-mono text-xs font-bold text-[#1a1c1c]">{project.role}</span>
+                <span class="font-mono text-xs text-[#727785]">LIHAT DETAIL </span>
+                <span class="font-mono text-xs font-bold text-[#0058be]">→</span>
               </div>
             </div>
           </a>

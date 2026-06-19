@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const project = {
+  title: "Suite Aplikasi Bisnis Modular",
+  client: "PT. Lims Yanwo Indonesia",
+  description: "ERP modular berbasis Laravel untuk lini produksi manufaktur — empat modul inti yang saling terintegrasi untuk menggantikan workflow kertas.",
+  tags: ["LARAVEL", "MULTI-MODUL", "ERP", "FULL-STACK"],
+  year: "2025",
+  role: "Full-Stack Engineer & Project Manager",
+  problem: "Lini produksi PT. Lims Yanwo masih jalan di atas kertas dan spreadsheet — Quality Control, pencatatan barang masuk, absensi, dan payroll semuanya terpisah-pisah. Tidak ada single source of truth, sehingga data sering tidak sinkron dan butuh rekap manual berulang setiap akhir periode.",
+  role_long: "Project manager sekaligus full-stack engineer — memimpin discovery kebutuhan dengan tim operasional, merancang arsitektur modular, mengembangkan backend dan frontend, mengoordinasikan deployment dan rollout.",
+  solution: "Sistem ERP modular berbasis Laravel dengan empat modul inti: Quality Control (grading hasil produksi), Pencatatan Barang Masuk Mentah, Absensi, dan Penggajian. Setiap modul berdiri sendiri tapi saling terhubung lewat database terpusat. Arsitektur mengikuti proses bisnis nyata di lapangan — bukan asumsi developer.",
+  features: [
+    "Modul Quality Control (Grading) dengan input hasil produksi per batch",
+    "Pencatatan Barang Masuk Mentah dengan tracking supplier",
+    "Modul Absensi dengan validasi shift kerja",
+    "Modul Penggajian yang otomatis menghitung dari data absensi dan grade QC",
+    "Dashboard operasional untuk supervisor lini",
+    "Laporan periodik yang menggantikan rekap manual"
+  ],
+  techStack: ["Laravel", "MySQL", "Tailwind CSS", "MVC", "Multi-modul"],
+  outcome: "Sistem ERP modular yang dipakai tim operasional setiap hari — menggantikan workflow kertas dan spreadsheet terpisah. Dirancang selaras dengan proses bisnis nyata di lapangan, sehingga diadopsi tanpa resistensi dari tim yang sudah terbiasa dengan workflow lama."
+};
+---
+
+<Layout title={`${project.title} | Sindu Aditya`}>
+  <main class="pt-24 pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <a href="/#work" class="inline-flex items-center gap-2 font-mono text-sm font-bold mb-8 hover:text-[#0058be] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+        </svg>
+        BACK TO WORK
+      </a>
+
+      <!-- Header -->
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          {project.tags.map(tag => (
+            <span class="font-mono text-xs font-bold bg-[#d8e2ff] text-[#001a42] px-3 py-1 border-[2px] border-black">{tag}</span>
+          ))}
+        </div>
+        <h1 class="font-display text-4xl md:text-6xl font-extrabold leading-tight mb-4">{project.title}</h1>
+        <p class="font-mono text-sm text-[#727785] mb-6">{project.role} · {project.client} · {project.year}</p>
+        <p class="font-body text-xl text-[#424754] max-w-3xl leading-relaxed">{project.description}</p>
+      </div>
+
+      <!-- Problem -->
+      <section class="mb-16 bg-[#f3f3f3] border-[4px] border-black border-l-[8px] p-8 shadow-[6px_6px_0_0_#000]">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">01 · MASALAH</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Workflow kertas dan spreadsheet yang tidak terhubung.</h2>
+        <p class="font-body text-lg text-[#1a1c1c] leading-relaxed">{project.problem}</p>
+      </section>
+
+      <!-- My Role -->
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">02 · PERAN SAYA</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Full-stack engineer sekaligus project manager.</h2>
+        <p class="font-body text-lg text-[#424754] leading-relaxed">{project.role_long}</p>
+      </section>
+
+      <!-- Solution -->
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">03 · SOLUSI</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">ERP modular yang mengikuti proses bisnis nyata.</h2>
+        <p class="font-body text-lg text-[#424754] leading-relaxed">{project.solution}</p>
+      </section>
+
+      <!-- Features -->
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">04 · FITUR UTAMA</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-6">Empat modul yang saling terintegrasi.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {project.features.map((feature, i) => (
+            <div class="bg-white border-[4px] border-black p-6 flex gap-4 items-start">
+              <span class="font-mono text-xs font-bold text-[#0058be] shrink-0 mt-1">{String(i + 1).padStart(2, '0')}</span>
+              <p class="font-body text-[#1a1c1c] leading-relaxed">{feature}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">05 · TECH STACK</span>
+        <div class="flex flex-wrap gap-3">
+          {project.techStack.map(tech => (
+            <span class="font-mono text-sm font-bold bg-black text-white px-4 py-2 border-[2px] border-black">{tech}</span>
+          ))}
+        </div>
+      </section>
+
+      <!-- Outcome -->
+      <section class="mb-16 bg-[#0058be] text-white border-[4px] border-black p-8 shadow-[6px_6px_0_0_#000]">
+        <span class="font-mono text-xs font-bold block mb-3">06 · HASIL</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4 leading-tight">Sistem yang dipakai tim operasional setiap hari.</h2>
+        <p class="font-body text-lg leading-relaxed">{project.outcome}</p>
+      </section>
+
+      <!-- Back -->
+      <div class="text-center pt-8 border-t-[4px] border-black">
+        <a href="/projects" class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-mono text-sm font-bold border-[4px] border-black hover:bg-[#0058be] transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+          SEMUA PROJECT
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

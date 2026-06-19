@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const project = {
+  title: "FleetTrack",
+  client: "Lab IoT Nexa — UDINUS",
+  description: "Backend untuk sistem fleet management berbasis IoT — menjembatani sensor kendaraan dengan dashboard real-time lewat protokol MQTT.",
+  tags: ["LARAVEL", "MQTT", "IOT", "REALTIME"],
+  year: "2025",
+  role: "Backend Engineer (Research Assistant)",
+  problem: "Sensor armada IoT (GPS, accelerometer, telemetry mesin) menghasilkan data real-time dalam volume besar — data harus sampai ke dashboard dengan latensi rendah, stabil, dan tidak hilang. Solusi REST synchronous tradisional tidak cukup untuk menangani streaming telemetry dari banyak device sekaligus.",
+  role_long: "Research assistant di Lab IoT Nexa — bertanggung jawab merancang infrastruktur backend dan struktur database, mengimplementasikan message broker, menyusun alur sistem untuk menangani aliran data sensor secara berkelanjutan.",
+  solution: "Backend Laravel dengan arsitektur modular yang mengintegrasikan protokol MQTT (Mosquitto) sebagai message broker. Sensor publish telemetry ke broker, backend subscribe dan memproses event, hasilnya di-push ke dashboard lewat WebSocket. Database dirancang untuk time-series telemetry — ringan untuk write, efisien untuk query rentang waktu.",
+  features: [
+    "MQTT message broker (Mosquitto) untuk komunikasi sensor real-time",
+    "Backend Laravel modular yang subscribe topic per-armada",
+    "Time-series database schema untuk telemetry (GPS, mesin, sensor lain)",
+    "WebSocket push ke dashboard untuk update real-time",
+    "Arsitektur event-driven yang stabil untuk banyak device bersamaan",
+    "API untuk integrasi dengan sistem operasional klien"
+  ],
+  techStack: ["Laravel", "MQTT (Mosquitto)", "WebSockets", "MySQL", "REST API", "Event-driven"],
+  outcome: "Backend yang siap untuk armada dalam skala harian — sensor publish → broker → backend → dashboard dalam hitungan milidetik. Arsitektur modular memungkinkan ekspansi sensor baru (temperatur, bahan bakar, dsb) tanpa perubahan besar di backend."
+};
+---
+
+<Layout title={`${project.title} | Sindu Aditya`}>
+  <main class="pt-24 pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <a href="/#work" class="inline-flex items-center gap-2 font-mono text-sm font-bold mb-8 hover:text-[#0058be] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+        </svg>
+        BACK TO WORK
+      </a>
+
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          {project.tags.map(tag => (
+            <span class="font-mono text-xs font-bold bg-[#d8e2ff] text-[#001a42] px-3 py-1 border-[2px] border-black">{tag}</span>
+          ))}
+        </div>
+        <h1 class="font-display text-4xl md:text-6xl font-extrabold leading-tight mb-4">{project.title}</h1>
+        <p class="font-mono text-sm text-[#727785] mb-6">{project.role} · {project.client} · {project.year}</p>
+        <p class="font-body text-xl text-[#424754] max-w-3xl leading-relaxed">{project.description}</p>
+      </div>
+
+      <section class="mb-16 bg-[#f3f3f3] border-[4px] border-black border-l-[8px] p-8 shadow-[6px_6px_0_0_#000]">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">01 · MASALAH</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Streaming telemetry real-time dari banyak device.</h2>
+        <p class="font-body text-lg text-[#1a1c1c] leading-relaxed">{project.problem}</p>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">02 · PERAN SAYA</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Backend engineer dengan fokus arsitektur event-driven.</h2>
+        <p class="font-body text-lg text-[#424754] leading-relaxed">{project.role_long}</p>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">03 · SOLUSI</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">MQTT message broker + backend modular.</h2>
+        <p class="font-body text-lg text-[#424754] leading-relaxed">{project.solution}</p>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">04 · FITUR UTAMA</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-6">Arsitektur yang stabil untuk streaming skala harian.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {project.features.map((feature, i) => (
+            <div class="bg-white border-[4px] border-black p-6 flex gap-4 items-start">
+              <span class="font-mono text-xs font-bold text-[#0058be] shrink-0 mt-1">{String(i + 1).padStart(2, '0')}</span>
+              <p class="font-body text-[#1a1c1c] leading-relaxed">{feature}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16">
+        <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">05 · TECH STACK</span>
+        <div class="flex flex-wrap gap-3">
+          {project.techStack.map(tech => (
+            <span class="font-mono text-sm font-bold bg-black text-white px-4 py-2 border-[2px] border-black">{tech}</span>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-16 bg-[#0058be] text-white border-[4px] border-black p-8 shadow-[6px_6px_0_0_#000]">
+        <span class="font-mono text-xs font-bold block mb-3">06 · HASIL</span>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4 leading-tight">Latensi rendah, scalable, dan siap ekspansi sensor.</h2>
+        <p class="font-body text-lg leading-relaxed">{project.outcome}</p>
+      </section>
+
+      <div class="text-center pt-8 border-t-[4px] border-black">
+        <a href="/projects" class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-mono text-sm font-bold border-[4px] border-black hover:bg-[#0058be] transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
+          </svg>
+          SEMUA PROJECT
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
