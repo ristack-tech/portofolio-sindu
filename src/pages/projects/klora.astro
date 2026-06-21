@@ -4,13 +4,13 @@ import Layout from '../../layouts/Layout.astro';
 const project = {
   title: "Klora",
   client: "ECOTHON 2024 — Finalis Top 10 ASEAN",
-  description: "Platform daur ulang web + mobile dengan penjadwalan penjemputan, estimasi nilai barang, dan konversi poin — dibangun dari nol dan masuk 10 besar kompetisi ASEAN.",
+  description: "Prototype platform daur ulang web + mobile yang saya dan tim rancang selama kompetisi ECOTHON 2024 — penjadwalan penjemputan, estimasi nilai barang, dan konversi poin.",
   tags: ["REACT NATIVE", "APPWRITE", "BACKEND-AS-A-SERVICE"],
   year: "2024",
   role: "Core Team Lead",
   problem: "Pengelolaan sampah masih manual — tidak ada cara mudah bagi rumah tangga menjadwalkan penjemputan barang bekas, tidak ada transparansi estimasi nilai, dan tidak ada insentif untuk partisipasi. Bank sampah konvensional punya proses yang panjang dan tidak scalable.",
-  role_long: "Core team lead sekaligus backend engineer — memimpin tim kecil dari discovery sampai demo, merancang arsitektur backend, mengembangkan aplikasi mobile React Native, dan mengkoordinasikan integrasi dengan Backend-as-a-Service.",
-  solution: "Platform daur ulang end-to-end: web untuk admin/operator, mobile (React Native) untuk pengguna. Backend menggunakan AppWrite sebagai BaaS — cepat dideploy, skala otomatis, dan tidak perlu maintain server. Logika bisnis mencakup estimasi nilai barang, penjadwalan penjemputan oleh kurir, dan konversi barang jadi poin yang bisa ditukar.",
+  role_long: "Core team lead sekaligus backend engineer — memimpin tim kecil dari discovery sampai demo akhir, merancang arsitektur backend, mengembangkan aplikasi mobile React Native, dan mengkoordinasikan integrasi dengan Backend-as-a-Service.",
+  solution: "Prototype platform daur ulang end-to-end: web untuk admin/operator, mobile (React Native) untuk pengguna. Backend menggunakan AppWrite sebagai BaaS — cepat dideploy, skala otomatis, dan tidak perlu maintain server. Logika bisnis mencakup estimasi nilai barang, penjadwalan penjemputan oleh kurir, dan konversi barang jadi poin yang bisa ditukar.",
   features: [
     "Aplikasi mobile (React Native) untuk pengguna akhir",
     "Estimasi nilai barang bekas berdasarkan kategori & kondisi",
@@ -20,11 +20,16 @@ const project = {
     "Backend AppWrite (BaaS) untuk skalabilitas & kecepatan iterasi"
   ],
   techStack: ["React Native", "AppWrite (BaaS)", "Tailwind CSS", "REST API", "Firebase Auth"],
-  outcome: "Produk yang masuk Top 10 ASEAN ECOTHON 2024 — bukti bahwa ide daur ulang bisa diterjemahkan jadi platform yang usable. Dikembangkan dari nol selama masa kompetisi, dengan fokus pada eksekusi end-to-end bukan sekadar prototype."
+  outcome: "Finalis Top 10 ECOTHON 2024 tingkat ASEAN — bukti bahwa ide daur ulang bisa diterjemahkan jadi blueprint produk yang usable. Dikembangkan dari nol selama masa kompetisi dengan fokus pada eksekusi end-to-end. Saat ini masih berupa prototype yang dibangun untuk lomba; belum dipakai luas di produksi."
 };
 ---
 
-<Layout title={`${project.title} | Sindu Aditya`}>
+<Layout
+  title={`${project.title} — Recycling Prototype, ASEAN Top 10 ECOTHON`}
+  description="Prototype platform daur ulang web + mobile yang dirancang selama kompetisi ECOTHON 2024 — penjadwalan penjemputan, estimasi nilai, dan konversi poin. Finalis Top 10 ASEAN."
+  ogImage="/og-default.png"
+  ogType="article"
+>
   <main class="pt-24 pb-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <a href="/#work" class="inline-flex items-center gap-2 font-mono text-sm font-bold mb-8 hover:text-[#0058be] transition-colors">
@@ -39,6 +44,7 @@ const project = {
           {project.tags.map(tag => (
             <span class="font-mono text-xs font-bold bg-[#d8e2ff] text-[#001a42] px-3 py-1 border-[2px] border-black">{tag}</span>
           ))}
+          <span class="font-mono text-xs font-bold bg-[#dadada] text-[#1a1c1c] px-3 py-1 border-[2px] border-black">PROTOTYPE</span>
         </div>
         <h1 class="font-display text-4xl md:text-6xl font-extrabold leading-tight mb-4">{project.title}</h1>
         <p class="font-mono text-sm text-[#727785] mb-6">{project.role} · {project.client} · {project.year}</p>
@@ -53,19 +59,19 @@ const project = {
 
       <section class="mb-16">
         <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">02 · PERAN SAYA</span>
-        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Core team lead — memimpin tim kecil end-to-end.</h2>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Core team lead — memimpin tim kecil dari nol sampai demo.</h2>
         <p class="font-body text-lg text-[#424754] leading-relaxed">{project.role_long}</p>
       </section>
 
       <section class="mb-16">
         <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">03 · SOLUSI</span>
-        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Platform daur ulang dengan penjadwalan & poin reward.</h2>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4">Prototype platform dengan penjadwalan & poin reward.</h2>
         <p class="font-body text-lg text-[#424754] leading-relaxed">{project.solution}</p>
       </section>
 
       <section class="mb-16">
         <span class="font-mono text-xs font-bold text-[#0058be] block mb-3">04 · FITUR UTAMA</span>
-        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-6">End-to-end: dari rumah pengguna ke bank sampah.</h2>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-6">Apa yang dirancang di dalam prototype.</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {project.features.map((feature, i) => (
             <div class="bg-white border-[4px] border-black p-6 flex gap-4 items-start">
@@ -87,7 +93,7 @@ const project = {
 
       <section class="mb-16 bg-[#0058be] text-white border-[4px] border-black p-8 shadow-[6px_6px_0_0_#000]">
         <span class="font-mono text-xs font-bold block mb-3">06 · HASIL</span>
-        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4 leading-tight">Top 10 ASEAN, dieksekusi dari nol.</h2>
+        <h2 class="font-display text-2xl md:text-3xl font-extrabold mb-4 leading-tight">Top 10 ASEAN, blueprint bukan deployment.</h2>
         <p class="font-body text-lg leading-relaxed">{project.outcome}</p>
       </section>
 

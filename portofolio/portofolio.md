@@ -17,7 +17,7 @@
 
 ## Profil
 
-Backend engineer dan technical project lead dengan rekam jejak menerjemahkan masalah operasional — mulai dari fleet IoT, ERP manufaktur, sampai platform daur ulang — menjadi sistem yang sudah live di produksi. Terbiasa merancang arsitektur database, memimpin tim 4–55 orang, dan mengawal produk dari pemetaan kebutuhan hingga deployment dan adopsi pengguna. Finalis Top 10 ASEAN ECOTHON 2024 dan Juara 3 Software Development di HITECH 2025 serta DINACOM 2024.
+Backend engineer dan technical project lead dengan rekam jejak menerjemahkan masalah operasional — mulai dari fleet IoT, ERP manufaktur, sampai platform multi-tenant — menjadi sistem yang sudah live di produksi. Terbiasa merancang arsitektur database, memimpin tim 4–55 orang, dan mengawal produk dari pemetaan kebutuhan hingga deployment dan adopsi pengguna. Finalis Top 10 ASEAN ECOTHON 2024 (prototype platform daur ulang) dan Juara 3 Software Development di HITECH 2025 serta DINACOM 2024.
 
 ---
 
@@ -90,8 +90,8 @@ Backend engineer dan technical project lead dengan rekam jejak menerjemahkan mas
 
 **Core Team Lead** — Maret 2024 – Januari 2025
 
-- Memimpin tim inti pengembangan platform daur ulang (web & mobile) dari nol — mengawal produk dari ideasi sampai masuk **Top 10 ASEAN ECOTHON 2024**.
-- Mengawasi integrasi backend–frontend dan memastikan produk akhir menjadi solusi yang usable untuk pengguna lapangan.
+- Memimpin tim inti pengembangan prototype platform daur ulang (web & mobile) dari nol selama kompetisi **ECOTHON 2024** — menghasilkan output finalis Top 10 ASEAN.
+- Merancang arsitektur backend dan mobile, mengimplementasikan Backend-as-a-Service (AppWrite) untuk aplikasi React Native. Produk dirancang untuk lomba; belum dipakai luas di produksi.
 
 ### Himpunan Mahasiswa Teknik Informatika (HIMTI) UDINUS
 
@@ -149,7 +149,7 @@ Backend engineer dan technical project lead dengan rekam jejak menerjemahkan mas
 
 ## Penghargaan
 
-- **Finalist Top 10 — ECOTHON 2024 (Tingkat ASEAN)** — Membangun Klora, platform daur ulang berbasis teknologi. Merancang arsitektur backend dan mobile serta mengimplementasikan Backend-as-a-Service (AppWrite) untuk aplikasi React Native. Mengawal produk dari konsep sampai 10 besar di kompetisi tingkat ASEAN.
+- **Finalist Top 10 — ECOTHON 2024 (Tingkat ASEAN)** — Merancang & membangun prototype Klora (platform daur ulang berbasis teknologi) bersama tim kecil selama kompetisi. Mendesain arsitektur backend dan mobile serta mengimplementasikan Backend-as-a-Service (AppWrite) untuk aplikasi React Native — sampai berhasil masuk 10 besar di tingkat ASEAN.
 - **Juara 3 — Software Development Competition, HITECH 2025 (HMTI UDINUS)** — Web E-Voting Terdesentralisasi (Blockchain) dengan NFT sebagai token verifikasi hak suara yang unik dan tidak dapat digandakan.
 - **Juara 3 — Software Development Competition, DINACOM 2024 (DNCC UDINUS)** — Web E-Voting.
 - **Juara 2 — Software Development Competition, IT FEST 2024 (Universitas IPB)** — Aplikasi Mobile Manajemen Daur Ulang (Klora). Merancang logika bisnis dan backend untuk aplikasi penjemputan barang bekas — fitur estimasi nilai, penjadwalan penjemputan, dan konversi barang jadi poin.
