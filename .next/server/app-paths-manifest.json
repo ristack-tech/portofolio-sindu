@@ -1,6 +1,4 @@
 {
-  "/admin/(panel)/settings/page": "app/admin/(panel)/settings/page.js",
-  "/admin/(panel)/skills/page": "app/admin/(panel)/skills/page.js",
-  "/admin/(panel)/experiences/page": "app/admin/(panel)/experiences/page.js",
-  "/admin/(panel)/page": "app/admin/(panel)/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
 }

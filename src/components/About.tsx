@@ -1,93 +1,46 @@
-import type { SiteSettings, SkillGrouped } from '@/lib/supabase'
+import { SITE, SKILLS } from '@/lib/site-content'
+import { Mail } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from './desktop/brand-icons'
 
-type Props = {
-  settings: SiteSettings | null
-  skills: SkillGrouped[]
-}
-
-export default function About({ settings, skills }: Props) {
-  const heading = settings?.about_heading ?? 'Backend engineer yang memimpin'
-  const headingAccent = settings?.about_heading_accent ?? 'dari sketsa sampai live di produksi.'
-  const p1 = settings?.about_paragraph_1 ?? 'Perjalanan saya mulai dari SMK Rekayasa Perangkat Lunak, lalu mendalami cybersecurity dasar di Infradigital Foundation — di situ saya pertama kali sadar: backend yang tidak aman sama saja bohong. Mindset itu yang saya bawa sampai sekarang, sambil terus memimpin tim dan membangun produk di HIMTI UDINUS, magang Laravel, sampai akhirnya memimpin delivery di Bengkel Koding dan RISTACK.'
-  const p2 = settings?.about_paragraph_2 ?? 'Sejak 2022 saya magang sebagai Laravel developer, lalu memimpin tim untuk produk yang dipakai tim operasional setiap hari — ERP modular untuk lini produksi manufaktur dan sistem fleet IoT dengan MQTT. Backend saya pilih karena di sanalah keputusan arsitektur menentukan apakah produk benar-benar bisa jalan atau cuma jadi demo.'
-  const p3 = settings?.about_paragraph_3 ?? 'Sekarang saya terbuka untuk peran backend engineer, technical project lead, atau system designer di tim yang serius mengirim produk ke produksi.'
-  const linkedin = settings?.social_linkedin
-  const github = settings?.social_github
-  const email = settings?.contact_email ?? 'nduujanadi51@gmail.com'
-  const photoUrl = settings?.about_photo_url?.startsWith('http') ? settings.about_photo_url : null
-
+export default function About() {
   return (
-    <section id="about" className="border-b-[8px] border-black bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-5">
-            <div className="section-header flex items-center gap-6 mb-8">
-              <span className="font-mono text-xs font-bold bg-black text-white px-4 py-2">02</span>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold">ABOUT</h2>
-            </div>
+    <section className="px-6 py-8 max-w-3xl mx-auto">
+      <h2 className="text-3xl font-bold mb-8">About</h2>
 
-            <div className="about-image relative">
-              <div className="aspect-square bg-[#e8e8e8] border-[4px] border-black relative overflow-hidden">
-                {photoUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={photoUrl} alt="Sindu Aditya" className="absolute inset-0 w-full h-full object-cover" />
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#e8e8e8] to-[#d0d0d0] flex items-center justify-center">
-                    <span className="font-display text-8xl font-extrabold text-[#c2c6d6]">SA</span>
-                  </div>
-                )}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#0058be]"></div>
+      <h3 className="text-2xl font-medium leading-snug mb-6">
+        {SITE.aboutHeading}<br />
+        <span className="text-[var(--color-accent)]">{SITE.aboutHeadingAccent}</span>
+      </h3>
+
+      <div className="space-y-4 text-[var(--color-text-muted)] leading-relaxed font-light max-w-3xl mb-10">
+        {SITE.aboutParagraphs.map((p) => <p key={p.slice(0, 20)}>{p}</p>)}
+      </div>
+
+      <div className="flex gap-2 mb-12">
+        <a href={SITE.socialLinkedin} className="gnome-btn gnome-hover w-10 h-10 flex items-center justify-center border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-white">
+          <LinkedinIcon size={18} />
+        </a>
+        <a href={SITE.socialGithub} className="gnome-btn gnome-hover w-10 h-10 flex items-center justify-center border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-white">
+          <GithubIcon size={18} />
+        </a>
+        <a href={`mailto:${SITE.email}`} className="gnome-btn gnome-hover w-10 h-10 flex items-center justify-center border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-white">
+          <Mail size={18} />
+        </a>
+      </div>
+
+      {SKILLS.length > 0 && (
+        <div>
+          <h4 className="text-xs font-medium tracking-wide text-[var(--color-text-muted)] mb-4">TECHNICAL STACK</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {SKILLS.map((skill) => (
+              <div key={skill.category} className="gnome-card p-4">
+                <span className="block text-sm font-medium text-[var(--color-accent)] mb-1">{skill.category}</span>
+                <span className="text-sm text-[var(--color-text-muted)]">{skill.items.join(' • ')}</span>
               </div>
-              <div className="absolute -bottom-6 -right-6 aspect-square bg-[#dadada] border-[4px] border-black -z-10"></div>
-            </div>
-
-            <div className="social-links flex gap-4 mt-10">
-              {linkedin && (
-                <a href={linkedin} className="social-icon w-12 h-12 bg-[#f3f3f3] border-[2px] border-black flex items-center justify-center hover:bg-[#0058be] hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-              )}
-              {github && (
-                <a href={github} className="social-icon w-12 h-12 bg-[#f3f3f3] border-[2px] border-black flex items-center justify-center hover:bg-[#0058be] hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-              )}
-              <a href={`mailto:${email}`} className="social-icon w-12 h-12 bg-[#f3f3f3] border-[2px] border-black flex items-center justify-center hover:bg-[#0058be] hover:text-white transition-colors">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <div className="lg:col-span-7">
-            <div className="sticky top-32">
-              <h3 className="about-heading font-display text-3xl md:text-4xl font-extrabold leading-tight mb-8">
-                {heading}<br/>
-                <span className="text-[#0058be]">{headingAccent}</span>
-              </h3>
-
-              <div className="about-text space-y-6 font-body text-lg text-[#424754] leading-relaxed">
-                {p1 && <p>{p1}</p>}
-                {p2 && <p>{p2}</p>}
-                {p3 && <p>{p3}</p>}
-              </div>
-
-              {skills.length > 0 && (
-                <div className="skills-section mt-12 pt-8 border-t-[4px] border-black">
-                  <h4 className="font-mono text-xs font-bold tracking-widest mb-6">TECHNICAL STACK</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {skills.map((skill) => (
-                      <div key={skill.category} className="skill-card bg-[#f3f3f3] border-[2px] border-black p-4">
-                        <span className="font-mono text-xs font-bold text-[#0058be] block mb-2">{skill.category}</span>
-                        <span className="font-body text-sm text-[#424754]">{skill.items.join(' • ')}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
     </section>
   )
 }

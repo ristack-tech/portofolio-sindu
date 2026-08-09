@@ -7,8 +7,8 @@ const SITE_NAME = 'Sindu Aditya'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Sindu Aditya — Backend Engineer & Technical Project Lead',
-    template: '%s — Sindu Aditya',
+    default: 'Sindu Aditya - Backend Engineer & Technical Project Lead',
+    template: '%s - Sindu Aditya',
   },
   description: 'Backend engineer & technical project lead yang merancang arsitektur, memimpin tim, dan mengirim produk dari sketsa sampai live di produksi.',
   authors: [{ name: 'Sindu Aditya Janadi' }],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   other: {
-    'theme-color': '#0058be',
+    'theme-color': '#e95420',
   },
 }
 
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
         <script
@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </head>
-      <body className="bg-[#f9f9f9] font-body text-[#1a1c1c] antialiased overflow-x-hidden">
+      <body className="bg-[#2c2c2c] text-white antialiased overflow-x-hidden">
         {children}
       </body>
     </html>

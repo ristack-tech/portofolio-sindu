@@ -1,63 +1,65 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0058be;
-  --color-primary-hover: #004494;
-  --color-surface: #f9f9f9;
-  --color-surface-dim: #dadada;
-  --color-surface-bright: #f9f9f9;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f3f3f3;
-  --color-surface-container: #eeeeee;
-  --color-surface-container-high: #e8e8e8;
-  --color-surface-container-highest: #e2e2e2;
-  --color-on-surface: #1a1c1c;
-  --color-on-surface-variant: #424754;
-  --color-outline: #727785;
-  --color-outline-variant: #c2c6d6;
-  --color-error: #ba1a1a;
-  --color-error-container: #ffdad6;
-  --color-on-error-container: #93000a;
-  --color-black: #000000;
-  --color-white: #ffffff;
+  /* Ubuntu Yaru dark theme */
+  --color-bg: #2c2c2c;
+  --color-surface: #3d3d3d;
+  --color-surface-hover: #454545;
+  --color-accent: #e95420;
+  --color-accent-hover: #ff6b35;
+  --color-accent-secondary: #77216f;
+  --color-text: #ffffff;
+  --color-text-muted: #b8b8b8;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-strong: rgba(255, 255, 255, 0.2);
 }
 
-/* Force font families */
+/* Force font family: Ubuntu everywhere */
 * {
-  font-family: 'Hanken Grotesk', ui-sans-serif, system-ui, sans-serif !important;
+  font-family: 'Ubuntu', ui-sans-serif, system-ui, sans-serif !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif !important;
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-code, pre, .font-mono {
-  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+/* GNOME HIG component primitives */
+.gnome-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
 }
 
-/* Nav underline (from Header) */
-.nav-underline {
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: black;
-  transition: width 0.3s;
+.gnome-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
-.group:hover .nav-underline {
-  width: 100%;
+
+.gnome-btn {
+  border-radius: 8px;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.gnome-btn-pill {
+  border-radius: 999px;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.gnome-input {
+  border-radius: 6px;
+}
+
+.gnome-hover:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* Custom animations */
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideRight {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeIn {
@@ -66,20 +68,24 @@ code, pre, .font-mono {
 }
 
 .animate-slide-up {
-  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-slide-right {
-  animation: slideRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideUp 0.4s ease forwards;
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease forwards;
+  animation: fadeIn 0.3s ease forwards;
 }
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
+/* Thin scrollbar for sidebar/main content, GNOME-ish */
+.gnome-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.gnome-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.gnome-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+.gnome-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
