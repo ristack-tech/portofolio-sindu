@@ -10,87 +10,62 @@ import {
 import { BiSolidCoffeeAlt } from "react-icons/bi";
 import { IoChatboxEllipses } from "react-icons/io5";
 import { MdOutlineBusinessCenter } from "react-icons/md";
-import mePicturenew from "../Images/pranavlatest.jpg";
-import pranavprofile from '../Images/pranavheadshot.jpg'
+import sinduProfile from "../Images/Sindu.png";
 import { IoMailOpen } from "react-icons/io5";
 
 export default function AboutMe() {
   return (
     <>
       <div
-        class="relative overflow-hidden bg-orange-400 -skew-y-2 px-4 xl:px-0 pt-16 space-y-24 font-outfit"
+        className="relative overflow-hidden bg-orange-400 -skew-y-2 px-4 xl:px-0 pt-16 space-y-24 font-outfit"
         id="about"
       >
-        <div class="relative skew-y-2">
-          <div class="lg:mx-auto lg:max-w-7xl flex flex-col lg:flex-row lg:gap-12 lg:px-8">
-            <div class="w-full lg:w-1/2 lg:my-0 my-12 mx-auto max-w-xl lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:order-1 order-2">
+        <div className="relative skew-y-2">
+          <div className="lg:mx-auto lg:max-w-7xl flex flex-col lg:flex-row lg:gap-12 lg:px-8">
+            <div className="w-full lg:w-1/2 lg:my-0 my-12 mx-auto max-w-xl lg:mx-0 lg:max-w-none lg:py-16 lg:px-0 lg:order-1 order-2">
               <div className="pl-0">
                 <div>
-                  <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white">
                     <IoChatboxEllipses className="h-8 w-8 text-[#704421]" />
                   </span>
                 </div>
 
-                <div class="mt-3">
-                  <h2 class="text-4xl mb-1 font-semibold tracking-wide text-white">
+                <div className="mt-3">
+                  <h2 className="text-4xl mb-1 font-semibold tracking-wide text-white">
                     A Bit{" "}
                     <span className="text-[#67230d] underline">About Me.</span>
                   </h2>
-                  <p className="px-4 text-gray-900 border-l-4 border-[#9d4d32] text-xl leading-relaxed text-slate-900 my-4">
-                    <span className="text-[#36190f] font-semibold">
-                      Hey!
-                    </span>{" "}
-                    I'm Pranav; I'm an 18-year-old based out of Richmond, Virginia studying
-                    Computer Science @ UIUC.
+                <p className="px-4 text-gray-900 border-l-4 border-[#9d4d32] text-xl leading-relaxed text-slate-900 my-4">
+                    My journey started at Vocational School in Software Engineering, then continued to a Bachelor's in Informatics Engineering while gaining real-world experience through internships, organizations, and client projects. From there I learned that code that merely runs isn't necessarily correct code, it has to be thought through down to its architecture and scale.
                     <br />
                     <br />
 
-                    Here's a quick rundown of what I've done. I built{" "}
-                    <a
-                      href="https://talem.org"
-                      target="_blank"
-                      className="underline text-[#67230d]"
-                    >
-                      talem.org
-                    </a>
-                    , a site connecting students with opportunities which was funded by Emergent Ventures. I also run{" "}
-                    <a
-                      href="https://thryvedesign.com"
-                      target="_blank"
-                      className="underline text-[#67230d]"
-                    >
-                      ThryveDesign
-                    </a>
-                    , my web-development agency where I've worked with 25+ businesses and generated low 5-figure revenue in under a year.
-                    <br />
-                    <br />
-                    Right now, I'm continuing to run my agency and working on a new social networking app.
-                    Feel free to reach out at anytime!
+                    Since 2022 I interned as a Laravel developer, then kept leading teams at HMTI UDINUS and Klora, until finally overseeing real product delivery at Bengkel Koding and RISTACK. Currently I work as a Fullstack Developer, with a strong lean toward backend, since that's where architectural decisions determine whether a product truly works or is just a demo.
                   </p>
 
                   <div className="flex mt-6 space-x-4 items-center  gap-x-2">
                     <a
-                      href="https://www.linkedin.com/in/pranav-konjeti/"
+                      href="https://linkedin.com/in/sinduadityajanadi"
                       target="_blank"
                       className="contact-buttons-about"
                     >
                       <FaLinkedin className="text-2xl" />
                     </a>
                     <a
-                      href="https://github.com/PkTheCoda"
+                      href="https://github.com/Sinduaditya"
                       target="_blank"
                       className="contact-buttons-about"
                     >
                       <FaGithub className="text-2xl" />
                     </a>
                     <a
-                      href="mailto:pranavkonjeti@gmail.com"
+                      href="mailto:nduujanadi51@gmail.com"
                       className="contact-buttons-about"
                     >
                       <IoMailOpen className="text-2xl" />
                     </a>
                     <a
-                      href="https://thryvedesign.com"
+                      href="https://linkedin.com/in/sinduadityajanadi"
                       target="_blank"
                       className="contact-buttons-about"
                     >
@@ -100,11 +75,11 @@ export default function AboutMe() {
                 </div>
               </div>
             </div>
-            <div class="w-full lg:w-1/2 lg:order-2 order-1 flex items-center justify-center lg:justify-end">
+            <div className="w-full lg:w-1/2 lg:order-2 order-1 flex items-center justify-center lg:justify-end">
               <img
                 loading="lazy"
-                class="rounded-xl w-5/6 lg:my-0 shadow-2xl ring-1 ring-black ring-opacity-5 rotate-2"
-                src={pranavprofile}
+                className="rounded-xl w-5/6 lg:my-0 shadow-2xl ring-1 ring-black ring-opacity-5 rotate-2"
+                src={sinduProfile}
               />
             </div>
           </div>
@@ -119,30 +94,29 @@ export default function AboutMe() {
 
                 <div className="w-full bg-[#34200e] py-6 flex flex-col gap-y-2 items-center text-white rounded-xl shadow-md">
                     <h1 className="seven-title font-semibold">
-                        2<span className="main-gradient">M+</span>
+                        4<span className="main-gradient">+</span>
                     </h1>
-                    <p className="one-title font-medium">Views (Millions)</p>
+                    <p className="one-title font-medium">Products in Production</p>
                 </div>
 
                 <div className="w-full bg-[#34200e] py-6 flex flex-col gap-y-2 items-center text-white rounded-xl shadow-md">
                     <h1 className="seven-title font-semibold">
-                        300<span className="main-gradient">k+</span>
+                        1<span className="main-gradient">+</span>
                     </h1>
-                    <p className="one-title font-medium">Visitors (Lifetime)</p>
+                    <p className="one-title font-medium">Years Designing Systems</p>
                 </div>
 
                 <div className="w-full bg-[#34200e] py-6 flex flex-col gap-y-2 items-center text-white rounded-xl shadow-md">
                     <h1 className="seven-title font-semibold">
-                        <span className="main-gradient">$</span>4000
+                        <span className="main-gradient"></span>55
                     </h1>
-                    <p className="one-title font-medium">In Total Funding</p>
+                    <p className="one-title font-medium">People Led</p>
                 </div>
 
             </div>
 
             <p className="text-center italic opacity-80">
-                *This data is a combination of the lifetime analytics across {' '}
-                <div className="block"><b className="underline">all my websites</b> tracked through <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" className="underline font-bold">Google Analytics</a></div>
+                Fullstack developer who leads from sketch to live in production. Open for fullstack developer, technical project lead, or system designer roles.
             </p>
 
           </div>

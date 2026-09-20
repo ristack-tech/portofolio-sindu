@@ -15,9 +15,9 @@ function Homepage() {
     <div>
         <Helmet>
           <html lang='en'></html>
-          <title>Pranav Konjeti - Web Developer & Freelancer</title>
+          <title>Sindu Aditya - Fullstack Developer & Technical Project Lead</title>
           <meta charSet='utf-8'/>
-          <meta name="description" content="I'm Pranav, a 16-year-old web developer & freelancer with 3M+ website views & $4K+ in funding. Explore my portfolio for my work and experience."/>
+          <meta name="description" content="Sindu Aditya Janadi, Fullstack Developer & Technical Project Lead. Building scalable multi-tenant, IoT, and ERP systems."/>
         </Helmet>
 
         <Header />

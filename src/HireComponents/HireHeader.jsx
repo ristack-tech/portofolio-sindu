@@ -39,20 +39,20 @@ export default function HireHeader() {
           <div className="mx-auto max-w-7xl pb-32 sm:pb-48 lg:pb-56 lg:pt-16 sm:pt-8">
             <div className="text-center">
               <h1 className="text-5xl tracking-tight font-semibold text-black sm:text-8xl font-outfit leading-normal z-40">
-                Let's create
+                Let's build
               </h1>
               <div className='main-gradient inline text-transparent bg-clip-text text-5xl tracking-tight font-semibold text-black sm:text-8xl font-outfit my-10 leading-normal z-40'>
                 <TypeAnimation
                         sequence={[
-                            'Intuitive User Interfaces', // Types 'One'
-                            1500, // Waits 1.5s
-                            'Seamless User Experiences', // Deletes 'One' and types 'Two'
-                            1500, // Waits 1.5s
-                            'Pixel-Perfect Designs', // Types 'Three' without deleting 'Two'
+                            'Scalable Backend Systems',
                             1500,
-                            'Mobile-Friendly Layouts',
+                            'IoT Fleet Management',
                             1500,
-                            'Interactive Web Solutions',
+                            'Multi-Tenant Platforms',
+                            1500,
+                            'Real-Time WebSockets',
+                            1500,
+                            'ERP Modular Systems',
                             1500,
                             () => {
                             console.log('Sequence completed');
@@ -65,7 +65,7 @@ export default function HireHeader() {
                     />
                 </div>
               <p className="mt-6 text-xl sm:text-3xl leading-8 text-black font-outfit">
-                Let's turn your dreams <span className='main-gradient font-semibold'>into realities, together.</span>
+                Let's design systems <span className='main-gradient font-semibold'>that deliver impact.</span>
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a

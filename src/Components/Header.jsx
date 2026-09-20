@@ -1,15 +1,14 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from '../Images/pklogo.png'
-import pranavtextlogo from '../Images/pranavlogotext.png'
+
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '#about' },
-  { name: 'Skills/Tools', href: '#tools' },
+  { name: 'Skills', href: '#tools' },
   { name: 'My Work', href: '#work' },
-  { name: 'Reach Out', href: '#contact' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -28,9 +27,9 @@ export default function Navbar() {
     <>
       {/* <div className='font-outfit'>
         <div className="py-2 bg-[#58371a] text-white text-center">
-          Looking for an affordable, stunning website? I run a web development agency and have worked with over 20 clients to create impactful websites. {' '}
-          <a href="https://thryvedesign.com" target='_blank' className='underline text-blue-100'>
-            Take me there.
+          Fullstack Developer & Technical Project Lead. {' '}
+          <a href="https://linkedin.com/in/sinduadityajanadi" target='_blank' className='underline text-blue-100'>
+            Let's connect!
           </a>
         </div>
       </div> */}
@@ -42,11 +41,7 @@ export default function Navbar() {
             <div className="flex lg:flex-1">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
-                    className="h-8 w-auto"
-                    src={pranavtextlogo}
-                    alt=""
-                  />
+                    <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
               </a>
             </div>
             <div className="flex lg:hidden">
@@ -73,11 +68,10 @@ export default function Navbar() {
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end font-light">
               <a 
-                href="https://thryvedesign.com" 
-                target='_blank'
+                href="#contact" 
                 className="text-md leading-6 bg-orange-700 text-white px-4 py-2 rounded-lg shadow-md"
               >
-                Hire Me <span aria-hidden="true">&rarr;</span>
+                Contact <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </nav>
@@ -89,11 +83,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between">
                 <a href="/" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
-                  <img
-                    className="h-8 w-auto"
-                    src={pranavtextlogo}
-                    alt=""
-                  />
+                      <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
                 </a>
                 <button
                   type="button"
@@ -120,11 +110,10 @@ export default function Navbar() {
                   </div>
                   <div className="py-6">
                     <a
-                      href="https://thryvedesign.com"
-                      target='_blank'
+                      href="#contact"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                      Hire Me 
+                      Contact 
                     </a>
                   </div>
                 </div>

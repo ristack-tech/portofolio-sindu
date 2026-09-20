@@ -4,33 +4,33 @@ import { IoAnalytics } from "react-icons/io5";
 
 const features = [
     {
-        title: "Domain Management",
-        content: "I will setup and manage your domain(s)! This includes everything from domain registration to DNS transfer.",
+        title: "Multi-Tenant Architecture",
+        content: "I design multi-tenant systems with row-level tenancy to isolate data per tenant within a single codebase.",
         icon: <CgWebsite />
     },
     {
-        title: "Responsive Web Design",
-        content: "I specialize in creating websites that look great and function flawlessly on all devices, from desktops to smartphones.",
+        title: "IoT & Real-Time Systems",
+        content: "Building backend for IoT systems with MQTT, WebSocket, and Laravel Reverb for real-time data streaming.",
         icon: <FaMobileAlt />
     },
     {
-        title: "Collaborative Approach",
-        content: "While I'm building the site, I'll make sure to work closely alongside you to make sure that I am making something up to your expectations!",
+        title: "ERP Modular Systems",
+        content: "Designing modular ERP systems integrated for end-to-end business operations — from QC to payroll.",
         icon: <FaPeopleArrows />
     },
     {
-        title: "Access to Code",
-        content: "Once I'm done with the website, you'll get access to the repo, or codebase, incase you want to make any custom edits or changes - or do anything.",
+        title: "Clean Architecture",
+        content: "Applying MVC, OOP, and Clean Code to produce maintainable and scalable code.",
         icon: <FaCode />
     },
     {
-        title: "Analytics",
-        content: "I'll have a google analytics account setup for your website. This allows you to view everything from conversion rate to how many people are visiting daily!",
+        title: "Database Design",
+        content: "Designing efficient database structures — from MySQL to time-series databases for IoT.",
         icon: <IoAnalytics />
     },
     {
-        title: "Pay Only if you Like it",
-        content: "There is no down-payment for my services. I'll create the site and if it's what you're looking for, you'll pay me! It's that simple.",
+        title: "CI/CD Pipeline",
+        content: "Automated deployment pipelines with Linux server configuration and Docker containerization.",
         icon: <FaMoneyBillWave />
     },
 ]
@@ -53,8 +53,7 @@ export default function HireBottomFeatures() {
               Still Don't feel <span className="main-gradient">convinced?</span>
             </h2>
             <p className="text-2xl font-light half-responsive text-center">
-              Here's a few more things you'll get by getting a website built by
-              me:
+              Here are some benefits you'll get:
             </p>
           </div>
           <div className="py-2 lg:px-0 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 z-20">
@@ -94,27 +93,20 @@ export default function HireBottomFeatures() {
         <div className="bg-[#171717] text-white text-center w-full text-5xl font-semibold rounded-xl py-20 flex flex-col gap-y-4 items-center font-outfit px-5 xl:px-20 relative ">
           <div className="block z-30">And the best part?</div>
           <div className="text-5xl block z-30 text-[#f53c80]">
-            You don't pay a dime <span className="text-[#1bc1f7] ">until</span>{" "}
-            the website is done.
+            Gratis konsultasi <span className="text-[#1bc1f7] ">sebelum</span>{" "}
+            memulai.
           </div>
           <div className="text-xl font-light w-full px-0 xl:px-20 block z-30">
-            Yep, it's that simple: no payment until you see the site. The
-            benefit? No worrying about paying for something you dislike. But
-            obviously, if you don't pay, you don't get the site. This won't be
-            an issue though because once you see the site, the last thing on
-            your mind is not paying for it 😉. But why do this? From my
-            experience, people are pretty skeptical when a 16 year old offers to
-            make their site so this feature will keep you from worrying about
-            paying for something you don't like!
+            Free consultation to understand your system needs. No commitment, no upfront cost. I'll help design the right solution for your business.
             <br />
             <br />
           </div>
           <a
-            href="https://tally.so/r/wLpGWy"
+            href="https://linkedin.com/in/sinduadityajanadi"
             target="_blank"
             className="bg-[#f53c80] z-40 px-3 transition transform duration-300 hover:scale-105 py-2 rounded-xl text-xl font-normal"
           >
-            Let's Do This!
+            Contact Me!
           </a>
         </div>
       </div>

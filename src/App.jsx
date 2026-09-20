@@ -1,3 +1,4 @@
+
 import './App.css'
 import React, {useState} from 'react';
 import Homepage from './Homepage'
@@ -52,13 +53,13 @@ function App() {
           <MdClose className="w-4 h-4 absolute top-2 right-2 cursor-pointer text-[#431407] hover:rotate-90 duration-300" onClick={() => setShowAgency(false)} />
 
           <div className='col-span-8 text-[#50281d]'>
-            <h1 className="one-title font-medium">I started my own Web Development Agency!</h1>
+            <h1 className="one-title font-medium">Available for Fullstack Development Roles!</h1>
             <p className="text-sm w-[90%]">
-              If you're looking for an affordable, stunning website tailored to your needs, <a href="https://thryvedesign.com" target='_blank' className='underline font-medium text-blue-800'>visit my agency</a> and book a consultation call!
+              If you're looking for a fullstack developer, technical project lead, or system designer, <a href="https://linkedin.com/in/sinduadityajanadi" target='_blank' className='underline font-medium text-blue-800'>contact me</a> and let's discuss your needs!
             </p>
           </div>
 
-          {/* <a href="https://thryvedesign.com" target='_blank' className="px-2 text-xs xl:text-sm mt-1 py-1 bg-amber-700 w-max rounded-md text-white mx-auto">
+          {/* <a href="https://linkedin.com/in/sinduadityajanadi" target='_blank' className="px-2 text-xs xl:text-sm mt-1 py-1 bg-amber-700 w-max rounded-md text-white mx-auto">
             I'm Interested!
           </a> */}
         </div>

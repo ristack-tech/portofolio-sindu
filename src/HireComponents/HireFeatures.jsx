@@ -16,19 +16,17 @@ const HireFeatures = () => {
           <div className="lg:w-11/12 xl:w-5/6 grid grid-cols-1 lg:grid-cols-2 font-outfit text-white rounded-xl overflow-hidden"> {/* Add overflow-hidden here */}
                 <div className="flex flex-col gap-y-4 justify-start lg:px-10 py-5 lg:order-1 order-2"> {/* bg-[#fbeee6] */}
                     <div className='text-4xl lg:text-6xl font-semibold '>
-                        Like A Design? <span className="main-gradient block">I'll build off it.</span>
+                        Need a specific architecture? <span className="main-gradient block">I'll design it.</span>
                     </div>
                     <div className=" font-normal text-2xl">
                         <span className="text-gray-500">
-                            Want your website to look a certain way or want it to have specific elements?
+                            Butuh sistem multi-tenant, IoT pipeline, atau ERP modular?
                         </span>
                         <span className="text-white">
-                            {" "}I'll build your website based on ANY information you provide - whether that be 
-                            color choices, fonts, designs, etc. {' '}
+                            {" "}I'll design an architecture tailored to your business needs — from database design to API structure.
                         </span>
                         <span className="text-gray-500">
-                            Don't have a design? That's completely fine as well. I'll go off my judgement and show you 
-                            some designs to look at!
+                            Don't have specs yet? No problem. I'll help from requirements discovery to deployment.
                         </span>
 
                     </div>
@@ -44,15 +42,14 @@ const HireFeatures = () => {
                 </div>
                 <div className="flex flex-col gap-y-4 justify-center lg:px-10 py-5"> {/* bg-[#fbeee6] */}
                     <div className='text-4xl lg:text-6xl font-semibold '>
-                        As many changes <span className="main-gradient block">as you want.</span>
+                        As many iterations <span className="main-gradient block">as you need.</span>
                     </div>
                     <div className=" font-normal text-2xl">
                         <span className="text-gray-500">
-                            Building a website is not a one-time trip; it's a journey. {' '}
+                            Membangun sistem butuh iterasi. {' '}
                         </span>
                         <span className="text-white">
-                            As I build your website, feel free to provide feedback. Whether that means 
-                            you need a section changed or want some content changed, I got you.
+                            During development, feel free to give feedback. Whether it's architecture changes, new features, or optimizations — I'm ready to adapt.
                         </span>
 
                     </div>
@@ -62,19 +59,18 @@ const HireFeatures = () => {
           <div className="lg:w-5/6 grid grid-cols-1 lg:grid-cols-2 font-outfit text-white rounded-xl overflow-hidden"> {/* Add overflow-hidden here */}
                 <div className="flex flex-col gap-y-4 justify-center lg:px-10 py-5 lg:order-1 order-2"> {/* bg-[#fbeee6] */}
                     <div className='text-4xl lg:text-6xl font-semibold '>
-                        Responsive down <span className="main-gradient block">to the corner.</span>
+                        Scalable architecture <span className="main-gradient block">from day one.</span>
                     </div>
                     <div className=" font-normal text-2xl">
 
                         <span className="text-gray-500">
-                            Responsiveness is required for a website to run properly! 
+                            Scalability is key for long-term systems. {' '}
                         </span>
                         <span className="text-white">
-                            {' '}For every website I build, I make sure to make it responsive on all devices: phones, tablets, computers, etc. {' '}
+                            Every system I build is designed to scale — from multi-tenant row-level to time-series databases for IoT.
                         </span>
                         <span className="text-gray-500">
-                            Whether someone is loading the website on a triple-monitor or
-                            an iphone 3, you can be assured your website will work properly. 
+                            The architecture I choose always considers future data and user growth.
                         </span>
 
 
@@ -94,15 +90,14 @@ const HireFeatures = () => {
                 <div className="flex flex-col gap-y-4 justify-center lg:px-10 py-5"> {/* bg-[#fbeee6] */}
                     <div className='text-4xl lg:text-6xl font-semibold '>
                         Making sure your
-                        <span className="main-gradient block">site is fast.</span>
+                        <span className="main-gradient block">system is reliable.</span>
                     </div>
                     <div className=" font-normal text-2xl">
                         <span className="text-gray-500">
-                            A crucial component of creating a good website is that it loads quick. {' '}
+                            Reliability is the foundation of every production system. {' '}
                         </span>
                         <span className="text-white">
-                            While I can't guaruantee perfect scores, I can assure you that your site will not only load quickly, but also 
-                            have stellar web-speed scores. 
+                            From automated deployments to robust error handling, I ensure the system runs stably 24/7.
                         </span>
                         
 

@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from '../Images/pklogo.png'
-import pranavtextlogo from '../Images/pranavlogotext.png'
+
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Email', href: 'mailto:pranavkonjeti@gmail.com' },
-  { name: 'Linkedin', href: 'https://www.linkedin.com/in/pranav-konjeti/' },
+  { name: 'Email', href: 'mailto:nduujanadi51@gmail.com' },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/sinduadityajanadi' },
 ]
 
 export default function NavbarStatic() {
@@ -30,11 +29,7 @@ export default function NavbarStatic() {
             <div className="flex lg:flex-1">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
-                    className="h-8 w-auto"
-                    src={pranavtextlogo}
-                    alt=""
-                  />
+                    <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
               </a>
             </div>
             <div className="flex lg:hidden">
@@ -61,11 +56,10 @@ export default function NavbarStatic() {
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <a 
-                href="https://thryvedesign.com" 
-                target='_blank'
+                href="#contact" 
                 className="text-md leading-6 text-black font-outfit"
               >
-                Hire Me <span aria-hidden="true">&rarr;</span>
+                Contact <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </nav>
@@ -75,11 +69,7 @@ export default function NavbarStatic() {
               <div className="flex items-center justify-between">
                 <a href="/" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
-                  <img
-                    className="h-8 w-auto"
-                    src={pranavtextlogo}
-                    alt=""
-                  />
+                      <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
                 </a>
                 <button
                   type="button"
@@ -106,11 +96,10 @@ export default function NavbarStatic() {
                   </div>
                   <div className="py-6">
                     <a
-                      href="https://thryvedesign.com"
-                      target='_blank'
+                      href="#contact"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                      Hire Me 
+                      Contact 
                     </a>
                   </div>
                 </div>

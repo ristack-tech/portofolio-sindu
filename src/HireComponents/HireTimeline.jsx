@@ -6,9 +6,9 @@ export default function HireTimeline() {
                 <div class="container mx-auto flex flex-col items-start lg:flex-row my-12 md:my-24">
                 <div class="flex flex-col w-full lg:sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8 font-outfit">
                     <p class="text-orange-700 uppercase">The Timeline</p>
-                    <p class="text-3xl md:text-4xl leading-normal font-semibold mb-2">Here's how I make you <span className="main-gradient">your dream website.</span></p>
+                    <p class="text-3xl md:text-4xl leading-normal font-semibold mb-2">Here's how I build you <span className="main-gradient">your backend system.</span></p>
                     <p class="text-sm md:text-base text-black mb-4">
-                    The process is quite long, so I've summed it down to the most core steps we'll take in our journey of making you your dream website! 
+                    The process is quite detailed, so I've summed it down to the most core steps we'll take in building your scalable backend system!
                     </p>
                 </div>
                 <div class="ml-0 lg:ml-12 w-full lg:w-2/3 sticky">
@@ -22,11 +22,9 @@ export default function HireTimeline() {
                             <div class="order-1 w-5/12"></div>
                             <div class="order-1 w-5/12 px-1 py-4 text-right">
                                 <p class="mb-3 text-base text-orange-700">0 Days</p>
-                                <h4 class="mb-3 font-bold text-lg md:text-2xl">Discovery Call</h4>
+                                <h4 class="mb-3 font-bold text-lg md:text-2xl">Discovery & Kebutuhan</h4>
                                 <p class="text-sm md:text-base leading-snug text-black text-opacity-100">
-                                This first phase is all about understanding your needs and establishing a foundation for the project. Is the website for a company,
-                                a business, a nonprofit, or something else? What functionality do we need? Login/signup? A scheduling system? We'll discuss all of that
-                                here.
+                                The first phase to understand your business needs. Is this system for multi-tenant, IoT, ERP, or other needs? What features are required? We'll discuss everything here.
                                 </p>
                             </div>
                             </div>
@@ -34,11 +32,9 @@ export default function HireTimeline() {
                             <div class="order-1 w-5/12"></div>
                             <div class="order-1 w-5/12 px-1 py-4 text-left">
                                 <p class="mb-3 text-base text-orange-700">1-2 Days</p>
-                                <h4 class="mb-3 font-bold text-lg md:text-2xl">Planning and Strategy</h4>
+                                <h4 class="mb-3 font-bold text-lg md:text-2xl">Arsitektur & Perencanaan</h4>
                                 <p class="text-sm md:text-base leading-snug text-black text-opacity-100">
-                                After our initial discussion, I'll create a detailed plan/contract outlining the structure, features, timeline, and 
-                                budget for your website. We'll review and refine this plan together to make sure we're aligned and ready to 
-                                move on with the project.
+                                After the initial discussion, I'll create a system architecture design, database structure, and project timeline. We'll review together to make sure everything is aligned.
                                 </p>
                             </div>
                             </div>
@@ -46,10 +42,9 @@ export default function HireTimeline() {
                             <div class="order-1 w-5/12"></div>
                             <div class="order-1 w-5/12 px-1 py-4 text-right">
                                 <p class="mb-3 text-base text-orange-700">7-10 Days</p>
-                                <h4 class="mb-3 font-bold text-lg md:text-2xl">UI/UX Design</h4>
+                                <h4 class="mb-3 font-bold text-lg md:text-2xl">Backend Development</h4>
                                 <p class="text-sm md:text-base leading-snug text-black text-opacity-100">
-                                Once the plan is approved, I'll design wireframes and mockups for your review. 
-                                Your feedback is crucial in finalizing the visual elements and overall design of the website.
+                                Once the architecture is approved, I start building the backend with Laravel, implementing database design, API endpoints, and necessary integrations.
                                 </p>
                             </div>
                             </div>
@@ -59,11 +54,9 @@ export default function HireTimeline() {
 
                             <div class="order-1 w-5/12 px-1 py-4">
                                 <p class="mb-3 text-base text-orange-700">10-20 Days</p>
-                                <h4 class="mb-3 font-bold  text-lg md:text-2xl text-left">Development</h4>
+                                <h4 class="mb-3 font-bold  text-lg md:text-2xl text-left">Integrasi & Testing</h4>
                                 <p class="text-sm md:text-base leading-snug text-black text-opacity-100">
-                                With the design confirmed, I'll start building the website's frontend and backend (if applicable), 
-                                making sure the site is responsive and functional. We'll have regular check-ins to provide feedback and 
-                                track my progress!
+                                Thorough testing, integration with frontend or other systems, performance optimization, and ensuring everything runs stably in the production environment.
                                 </p>
                             </div>
                             </div>
@@ -72,11 +65,9 @@ export default function HireTimeline() {
                             <div class="order-1 w-5/12"></div>
                             <div class="order-1 w-5/12 px-1 py-4 text-right">
                                 <p class="mb-3 text-base text-orange-700">20 Days Onwards</p>
-                                <h4 class="mb-3 font-bold text-lg md:text-2xl">Final Edits + Launch</h4>
+                                <h4 class="mb-3 font-bold text-lg md:text-2xl">Deployment & Maintenance</h4>
                                 <p class="text-sm md:text-base leading-snug text-black text-opacity-100">
-                                Once everything is perfect, we'll launch the website! Post-launch, I'll continue to provide support, 
-                                making sure the website remains secure, up-to-date, and aligned with any changes you need! Any major changes,
-                                however, will require additional payments.
+                                Deploy to production. I also provide post-launch support for maintenance, bug fixes, and feature additions as needed.
                                 </p>
                             </div>
                             </div>

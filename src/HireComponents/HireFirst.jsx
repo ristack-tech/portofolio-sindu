@@ -7,20 +7,19 @@ export default function HireFirst() {
       <div className="container mx-auto flex lg:flex-row flex-col items-center justify-center px-2 lg:px-20">
         {/* Left Side */}
         <div className="w-full lg:w-1/2 lg:pr-8 flex flex-col justify-center font-outfit text-center lg:text-start">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-4 font-outfit">I tackle web-development a bit differently...</h2>
+          <h2 className="text-4xl font-semibold text-gray-800 mb-4 font-outfit">I approach development differently...</h2>
           <p className="text-lg text-gray-600 mb-4">
-            To me, a good website is more than one that "looks nice". It has to have the perfect color scheme, the perfect fonts, be accessible to users, load fast, etc..
+            To me, a good system is more than one that "just works". It has to have the right architecture, scalable database design, proper isolation, and be maintainable for the long term.
           </p>
           <p className="text-lg text-gray-600 mb-4">
-            In a sense, I'm essentially a perfectionist - one of the few qualities that might suck in real life, but translates well into web-development. 
+            I chose backend because that's where architectural decisions determine whether a product truly works or is just a demo.
             
           </p>
           <p className="text-lg text-gray-600 mb-6">
-            When I create my websites, I make sure <span className='font-bold underline underline-offset-1'>everything is perfect.</span> From the right color palette to the right fonts, whenever I make a website, I put my all into it.
+            When I build systems, I make sure <span className='font-bold underline underline-offset-1'>everything is well-planned.</span> From multi-tenant architecture to IoT data pipelines, every decision I make is driven by scalability and maintainability.
           </p>
           <p className="text-lg text-gray-600 mb-6">
-            So if you <span className="italic">were</span> to get a website designed by me, I can assure that everything would be to your liking. Don't like the font? Let's change it. Don't like the color scheme? Let's change that as well. 
-            It is <span className="italic">your</span> website after all.
+            If you <span className="italic">need</span> a fullstack developer or technical project lead, I can help design a system tailored to your business needs. From requirements discovery to production deployment.
           </p>
           {/* <a
             href="#contact"

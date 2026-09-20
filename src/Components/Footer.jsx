@@ -8,7 +8,6 @@ import {
 } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 import { BiSolidCoffeeAlt } from "react-icons/bi";
-import pranavbigtext from '../Images/pranavbigtext.svg'
 
 function Footer() {
   return (
@@ -30,9 +29,9 @@ function Footer() {
             Get in Touch
           </h2>
           <p className="text-lg text-[#553418] px-2 max-w-xl text-center">
-            Have a question or a project in mind? Don't hesitate to reach out!
-            Whether it's discussing potential collaborations or simply saying
-            hello, I'm here and ready to chat.
+            Got an operational problem that needs solving? Open for fullstack
+            developer, technical project lead, or system designer roles. Let's
+            talk!
           </p>
 
           <ContactForm />
@@ -40,15 +39,12 @@ function Footer() {
 
         {/* <footer className="bg-[#efa237] mt-16 py-8 text-center">
           <p className="text-[#553418] text-lg font-outfit px-2">
-            Built with ❤️ by <a href="mailto:pranavkonjeti@gmail.com" target="_blank" className="text-[#3c2611] underline">Pranav Konjeti</a> using <span className="text-[#3c2611]">React, TailwindCSS, Material Tailwind</span> <br />
-            This portfolio is a complete rehaul of my <a href="https://pranavkold.vercel.app" target="_blank" className="text-[#3c2611] underline">old one</a>. Have Suggestions? Email me!
-            
-
+            Built with ❤️ by <a href="mailto:nduujanadi51@gmail.com" target="_blank" className="text-[#3c2611] underline">Sindu Aditya Janadi</a> using <span className="text-[#3c2611]">React, TailwindCSS, Material Tailwind</span> <br />
           </p>
 
           <div className="mt-4 flex justify-center gap-4">
             <a
-              href="https://github.com/pkthecoda"
+              href="https://github.com/Sinduaditya"
               target="_blank"
                 className="p-3 bg-white rounded-full transition transform hover:scale-105"
               rel="noopener noreferrer"
@@ -56,7 +52,7 @@ function Footer() {
               <FaGithub className="text-[#4a2f16] text-2xl" />
             </a>
             <a
-              href="https://www.linkedin.com/in/pranav-konjeti"
+              href="https://linkedin.com/in/sinduadityajanadi"
               target="_blank"
                 className="p-3 bg-white rounded-full transition transform hover:scale-105"
               rel="noopener noreferrer"
@@ -65,23 +61,9 @@ function Footer() {
             </a>
             <a
               className="p-3 bg-white rounded-full transition transform hover:scale-105"
-              href="mailto:pranavkonjeti@gmail.com"
+              href="mailto:nduujanadi51@gmail.com"
             >
               <FaEnvelope className="text-[#4a2f16] text-2xl" />
-            </a>
-            <a
-              href="https://www.youtube.com/@pranavkonjeti"
-                className="p-3 bg-white rounded-full transition transform hover:scale-105"
-              target="_blank"
-            >
-              <FaYoutube className="text-[#4a2f16] text-2xl" />
-            </a>
-            <a
-              href="https://buymeacoffee.com/pranavkonjeti"
-                className="p-3 bg-white rounded-full transition transform hover:scale-105"
-              target="_blank"
-            >
-              <BiSolidCoffeeAlt className="text-[#4a2f16] text-2xl" />
             </a>
           </div>
         </footer> */}
@@ -89,12 +71,17 @@ function Footer() {
         <footer className="mt-10">
           <div className="bg-[#de9630] pt-10 px-10">
             <div className="max-w-screen-lg px-4 sm:px-6 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto text-[#553418]">
-
               <div className="p-5 flex flex-col gap-y-2 items-start">
-                <h3 className="font-bold text-xl text-[#553418]">Pranav Konjeti</h3>
-                
-                <a href="https://buymeacoffee.com/pranavkonjeti" target="_blank">
-                  <img className="max-w-[150px] shadow-md" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee"/>
+                <h3 className="font-bold text-xl text-[#553418]">
+                  Sindu Aditya
+                </h3>
+
+                <a href="https://buymeacoffee.com/sinduaditya" target="_blank">
+                  <img
+                    className="max-w-[150px] shadow-md"
+                    src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                    alt="Buy Me A Coffee"
+                  />
                 </a>
               </div>
 
@@ -102,14 +89,19 @@ function Footer() {
                 <div className="text-sm uppercase text-[#553418] font-bold">
                   Quick Links
                 </div>
-                <a className="my-3 block hover:underline" href="https://www.linkedin.com/in/pranav-konjeti/" target="_blank">
-                  Linkedin <span className="text-teal-600 text-xs p-1"></span>
+                <a
+                  className="my-3 block hover:underline"
+                  href="https://linkedin.com/in/sinduadityajanadi"
+                  target="_blank"
+                >
+                  LinkedIn <span className="text-teal-600 text-xs p-1"></span>
                 </a>
-                <a className="my-3 block hover:underline" href="https://www.youtube.com/@pranavkonjeti" target="_blank">
-                  Youtube <span className="text-teal-600 text-xs p-1"></span>
-                </a>
-                <a className="my-3 block hover:underline" href="https://github.com/PkTheCoda" target="_blank">
-                  Github
+                <a
+                  className="my-3 block hover:underline"
+                  href="https://github.com/Sinduaditya"
+                  target="_blank"
+                >
+                  GitHub
                 </a>
               </div>
 
@@ -117,14 +109,26 @@ function Footer() {
                 <div className="text-sm uppercase text-[#553418] font-bold">
                   Projects
                 </div>
-                <a className="my-3 block hover:underline" href="https://talem.org" target="_blank"> 
-                  talem.org<span className="text-teal-600 text-xs p-1"></span>
+                <a
+                  className="my-3 block hover:underline"
+                  href="https://github.com/Sinduaditya"
+                  target="_blank"
+                >
+                  FIK-Apps<span className="text-teal-600 text-xs p-1"></span>
                 </a>
-                <a className="my-3 block hover:underline" href="https://desourcedesign.vercel.app" target="_blank">
-                  desource.app<span className="text-teal-600 text-xs p-1"></span>
+                <a
+                  className="my-3 block hover:underline"
+                  href="https://github.com/Sinduaditya"
+                  target="_blank"
+                >
+                  FleetTrack<span className="text-teal-600 text-xs p-1"></span>
                 </a>
-                <a className="my-3 block hover:underline" href="https://learntheweb.org" target="_blank">
-                  learntheweb.org<span className="text-teal-600 text-xs p-1"></span>
+                <a
+                  className="my-3 block hover:underline"
+                  href="https://github.com/Sinduaditya"
+                  target="_blank"
+                >
+                  Klora<span className="text-teal-600 text-xs p-1"></span>
                 </a>
               </div>
 
@@ -132,22 +136,27 @@ function Footer() {
                 <div className="text-sm uppercase text-[#553418] font-bold">
                   Contact Me
                 </div>
-                <a className="my-3 block" href="mailto:pranavkonjeti@gmail.com">
-                  pranavkonjeti@gmail.com
+                <a className="my-3 block" href="mailto:nduujanadi51@gmail.com">
+                  nduujanadi51@gmail.com
                   <span className="text-teal-600 text-xs p-1"></span>
                 </a>
-                <p className="my-3 block">
-                  For hiring inquires, please contact me through my <a href="https://thryvedesign.com" target="_blank" className="font-medium underline">business website</a>
+                <a
+                  className="my-3 block"
+                  href="https://wa.me/62895629558923"
+                  target="_blank"
+                >
+                  +62 895-6295-58923
                   <span className="text-teal-600 text-xs p-1"></span>
-                </p>
+                </a>
               </div>
-              
             </div>
             <div className="max-w-screen-lg py-10 border-t-2 border-[#b1743e] mx-auto flex flex-col gap-y-1 relative">
               <div className="px-4 py-2 rounded-md text-[#553418] bg-[#f7e2ab] w-max absolute z-20 top-4 -left-4 -rotate-[3deg] shadow-lg">
                 Built with ❤️ by:
               </div>
-              <img src={pranavbigtext} alt="" className="w-full"/>
+              <h2 className="text-7xl sm:text-8xl lg:text-9xl font-black text-[#553418] font-outfit tracking-tight">
+                Sindu
+              </h2>
             </div>
           </div>
         </footer>

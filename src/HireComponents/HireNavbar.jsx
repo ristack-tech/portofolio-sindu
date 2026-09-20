@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import pranavtextlogo from '../Images/pranavlogotext.png'
+
 
 const navigation = [
   { name: 'Home', href: '/', target: "_self" },
-  { name: 'Hire Me!', href: 'https://tally.so/r/wLpGWy', target: "_blank" },
+  { name: 'Contact Me!', href: 'https://linkedin.com/in/sinduadityajanadi', target: "_blank" },
 ]
 
 export default function HireNavbar() {
@@ -28,11 +28,7 @@ export default function HireNavbar() {
             <div className="flex lg:flex-1">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
-                    className="h-8 w-auto"
-                    src={pranavtextlogo}
-                    alt=""
-                  />
+                    <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
               </a>
             </div>
             <div className="flex lg:hidden">
@@ -59,7 +55,7 @@ export default function HireNavbar() {
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <a 
-                href="mailto:pranavkonjeti@gmail.com" 
+                href="mailto:nduujanadi51@gmail.com" 
                 className="text-md leading-6 text-black font-outfit"
               >
                 Contact <span aria-hidden="true">&rarr;</span>
@@ -72,11 +68,7 @@ export default function HireNavbar() {
               <div className="flex items-center justify-between">
                 <a href="/" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
-                  <img
-                    className="h-8 w-auto"
-                    src={pranavtextlogo}
-                    alt=""
-                  />
+                      <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
                 </a>
                 <button
                   type="button"
@@ -103,7 +95,7 @@ export default function HireNavbar() {
                   </div>
                   <div className="py-6">
                     <a
-                      href="mailto:pranavkonjeti@gmail.com"
+                      href="mailto:nduujanadi51@gmail.com"
                       className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       Contact

@@ -13,9 +13,9 @@ export default function Hire() {
         <>
             <Helmet>
                 <html lang='en'></html>
-                <title>Pranav Konjeti - Web Developer & Freelancer</title>
+                <title>Sindu Aditya - Fullstack Developer</title>
                 <meta charSet='utf-8'/>
-                <meta name="description" content="Hi, I'm Pranav, a web developer. Let's craft your dream website together. Contact me for flawless solutions."/>
+                <meta name="description" content="Sindu Aditya Janadi, Fullstack Developer & Technical Project Lead. Contact me for scalable backend systems."/>
             </Helmet>
             <HireNavbar />
             <HireHeader />
