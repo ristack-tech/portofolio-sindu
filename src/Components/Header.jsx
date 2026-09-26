@@ -1,129 +1,208 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-
+import {
+  motion,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+} from 'motion/react'
 
 const navigation = [
-  { name: 'Home', href: '/' },
+  { name: 'Work', href: '#work' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Awards', href: '#awards' },
   { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#tools' },
-  { name: 'My Work', href: '#work' },
+  { name: 'Stack', href: '#tools' },
   { name: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [active, setActive] = useState('')
+  const [scrolled, setScrolled] = useState(false)
+  const reduceMotion = useReducedMotion()
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const nextScrolled = latest > 12
+    setScrolled((current) => (current === nextScrolled ? current : nextScrolled))
+  })
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries.find((entry) => entry.isIntersecting)
+        if (!visibleEntry) return
+
+        const match = navigation.find(
+          (item) => item.href === `#${visibleEntry.target.id}`,
+        )
+        if (match) setActive(match.name)
+      },
+      { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
+    )
+
+    navigation.forEach((item) => {
+      const element = document.querySelector(item.href)
+      if (element) observer.observe(element)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   const handleNavigationClick = (event, href) => {
-    event.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-    setMobileMenuOpen(false); 
-  };
+    const target = document.querySelector(href)
+    if (!target) return
+
+    event.preventDefault()
+    target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' })
+    setMobileMenuOpen(false)
+  }
 
   return (
-    <>
-      {/* <div className='font-outfit'>
-        <div className="py-2 bg-[#58371a] text-white text-center">
-          Fullstack Developer & Technical Project Lead. {' '}
-          <a href="https://linkedin.com/in/sinduadityajanadi" target='_blank' className='underline text-blue-100'>
-            Let's connect!
-          </a>
+    <header
+      className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
+        scrolled
+          ? 'border-line bg-white/90 backdrop-blur-md'
+          : 'border-transparent bg-white'
+      }`}
+    >
+      <nav
+        className="shell flex h-[4.5rem] items-center justify-between"
+        aria-label="Global"
+      >
+        <a
+          href="#top"
+          onClick={(event) => handleNavigationClick(event, '#top')}
+          className="group relative -m-2 rounded-lg p-2 font-display text-xl font-semibold tracking-[-0.04em] text-ink"
+        >
+          <span className="sr-only">Sindu Aditya, kembali ke atas</span>
+          <motion.span
+            initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            aria-hidden="true"
+          >
+            Sindu
+            <motion.span
+              className="inline-block text-ember"
+              initial={reduceMotion ? false : { y: 0, rotate: 0 }}
+              animate={reduceMotion ? undefined : { y: [0, -5, 0], rotate: [0, 9, 0] }}
+              transition={{ delay: 0.35, duration: 0.45, ease: 'easeOut' }}
+            >
+              .
+            </motion.span>
+          </motion.span>
+        </a>
+
+        <div className="hidden items-center gap-8 md:flex">
+          {navigation.map((item, index) => {
+            const isActive = active === item.name
+
+            return (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                aria-current={isActive ? 'location' : undefined}
+                initial={reduceMotion ? false : { opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: reduceMotion ? 0 : 0.08 + index * 0.04,
+                  duration: 0.35,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className={`group relative py-2 text-sm font-medium transition-colors duration-200 ${
+                  isActive ? 'text-ink' : 'text-ink-soft hover:text-ink'
+                }`}
+                onClick={(event) => handleNavigationClick(event, item.href)}
+              >
+                {item.name}
+                <span className="absolute inset-x-0 -bottom-px h-px origin-left scale-x-0 bg-ink transition-transform duration-200 group-hover:scale-x-100" />
+                {isActive && (
+                  <motion.span
+                    layoutId="active-navigation-dot"
+                    className="absolute -bottom-[5px] left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-ember"
+                    transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                  />
+                )}
+              </motion.a>
+            )
+          })}
         </div>
-      </div> */}
 
-      <div className="md:sticky z-40 top-10 mt-10 flex flex-col justify-center items-center mx-10 font-outfit">
+        <button
+          type="button"
+          className="-mr-2 inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-ink transition-colors hover:bg-ember-wash md:hidden"
+          onClick={() => setMobileMenuOpen(true)}
+          aria-expanded={mobileMenuOpen}
+        >
+          <span className="sr-only">Buka menu utama</span>
+          <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+        </button>
+      </nav>
 
-        <header className="bg-white/40 max-w-[85rem] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-2xl w-full z-40">
-          <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-            <div className="flex lg:flex-1">
-              <a href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
-                    <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
-              </a>
-            </div>
-            <div className="flex lg:hidden">
-              <button
-                type="button"
-                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(true)}
+      <Dialog
+        as="div"
+        className="relative z-50 md:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
+        <motion.div
+          className="fixed inset-0 bg-ink/20"
+          aria-hidden="true"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+        />
+
+        <Dialog.Panel
+          as={motion.div}
+          className="fixed inset-x-3 top-3 overflow-hidden rounded-[14px] border border-line-strong bg-white px-5 pb-7 pt-5 shadow-hard"
+          initial={reduceMotion ? false : { opacity: 0, y: -18, rotate: -1.5 }}
+          animate={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ type: 'spring', stiffness: 330, damping: 27 }}
+        >
+          <div className="flex items-center justify-between border-b border-line pb-4">
+            <span className="font-display text-xl font-semibold tracking-[-0.04em] text-ink">
+              Sindu<span className="text-ember">.</span>
+            </span>
+            <button
+              type="button"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-ink transition-colors hover:bg-ember-wash"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Tutup menu utama</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+
+          <div className="mt-4 grid">
+            {navigation.map((item, index) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className={`flex min-h-12 items-center justify-between border-b border-line px-1 font-display text-lg font-medium ${
+                  active === item.name ? 'text-ember' : 'text-ink'
+                }`}
+                initial={reduceMotion ? false : { opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: reduceMotion ? 0 : 0.05 + index * 0.045 }}
+                onClick={(event) => handleNavigationClick(event, item.href)}
               >
-                <span className="sr-only">Open main menu</span>
-                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="hidden lg:flex lg:gap-x-12">
-              {navigation.map((item) => (
-                <a 
-                  key={item.name} 
-                  href={item.href} 
-                  className="text-md leading-6 text-black transition transform hover:scale-110 font-light"
-                  onClick={(event) => handleNavigationClick(event, item.href)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end font-light">
-              <a 
-                href="#contact" 
-                className="text-md leading-6 bg-orange-700 text-white px-4 py-2 rounded-lg shadow-md"
-              >
-                Contact <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </nav>
+                {item.name}
+                <span className="font-mono text-sm" aria-hidden="true">
+                  {active === item.name ? '•' : '↘'}
+                </span>
+              </motion.a>
+            ))}
+          </div>
 
-          {/* Mobile Dialog */}
-          <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-            <div className="fixed inset-0 z-40" />
-            <Dialog.Panel className="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div className="flex items-center justify-between">
-                <a href="/" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Your Company</span>
-                      <span className="text-xl font-bold text-[#8b4513] tracking-tighter">SA</span>
-                </a>
-                <button
-                  type="button"
-                  className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>
-              <div className="mt-6 flow-root">
-                <div className="-my-6 divide-y divide-gray-500/10">
-                  <div className="space-y-2 py-6">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={(event) => handleNavigationClick(event, item.href)}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                  <div className="py-6">
-                    <a
-                      href="#contact"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50"
-                    >
-                      Contact 
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Dialog.Panel>
-          </Dialog>
-
-        </header>
-
-      </div>
-    </>
+          <p className="mt-5 font-mono text-[0.72rem] text-ink-soft">
+            SEMARANG · UTC+7 · AVAILABLE
+          </p>
+        </Dialog.Panel>
+      </Dialog>
+    </header>
   )
 }

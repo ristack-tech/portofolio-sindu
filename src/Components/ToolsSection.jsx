@@ -1,203 +1,107 @@
-import React from "react";
-import { WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
-import { IoChatboxEllipses } from "react-icons/io5";
+import { motion, useReducedMotion } from 'motion/react'
 
-const projectStarterPack = [
+const groups = [
   {
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg", 
-    text: "PHP",
+    title: 'Backend',
+    tools: ['Laravel', 'Node.js', 'REST APIs', 'PostgreSQL', 'MySQL'],
   },
   {
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg", 
-    text: "Laravel",
+    title: 'Frontend',
+    tools: ['Next.js', 'React', 'Vue.js', 'Tailwind CSS'],
   },
   {
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", 
-    text: "JavaScript",
+    title: 'Infrastructure',
+    tools: ['Docker', 'Linux', 'CI/CD', 'Grafana'],
   },
   {
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", 
-    text: "Vue.js",
+    title: 'Other',
+    tools: ['IoT', 'MQTT', 'System Design', 'Git'],
   },
-];
+]
 
-const miscellaneous = [
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg", 
-      text: "PHP",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-blue-400 bg-blue-100/20"
+const groupVariants = {
+  hidden: { opacity: 0, y: 9 },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.06,
+      duration: 0.45,
+      ease: [0.16, 1, 0.3, 1],
     },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", 
-      text: "JavaScript",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-blue-400 bg-blue-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", 
-      text: "Python",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-blue-400 bg-blue-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg", 
-      text: "Laravel",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-gray-400 bg-gray-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", 
-      text: "React",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-gray-400 bg-gray-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", 
-      text: "Vue.js",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-gray-400 bg-gray-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", 
-      text: "Tailwind CSS",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-gray-400 bg-gray-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", 
-      text: "HTML5",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-gray-400 bg-gray-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", 
-      text: "CSS3",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-gray-400 bg-gray-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
-      text: "MySQL",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-green-400 bg-green-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
-      text: "PostgreSQL",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-green-400 bg-green-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-      text: "Git/GitHub",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-green-400 bg-green-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-      text: "Docker",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-green-400 bg-green-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
-      text: "Linux Server",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-green-400 bg-green-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
-      text: "Flask",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-gray-400 bg-gray-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/mosquitto.svg",
-      text: "MQTT",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-orange-400 bg-orange-100/20"
-    },
-    {
-      image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
-      text: "Grafana",
-      color: "transition transform duration-300 border-2 border-transparent hover:border-2 hover:border-purple-400 bg-purple-100/20"
-    },
-];
-
-function Column({tools }) {
-    return (
-        <>
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-10 ">
-            {tools.map((tool, index) => (
-                <div key={index} className="flex transition transform duration-300 hover:scale-[1.01] flex-wrap p-1 bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-pink-500 via-red-500 to-yellow-500 rounded-xl items-center justify-center">
-                  <div
-                      className={`bg-white border p-10 rounded-lg text-center`}
-                  >
-                      <img
-                        src={tool.image}
-                        alt={tool.text}
-                        className="w-[8rem] h-20 mx-auto mb-4"
-                      />
-                      <p className="text-lg font-medium font-outfit tracking-tight">{tool.text}</p>
-                  </div>
-                </div>
-            ))}
-          </div>
-        </>
-    );
-  }
+  }),
+}
 
 export default function ToolsSection() {
+  const reduceMotion = useReducedMotion()
+
   return (
-    <>
-    
-      <div className="h-max mt-20 relative">
-        <div className="text-center seven-title font-outfit font-semibold tracking-tight flex items-center gap-x-5 justify-center">
-          <div>
-            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-orange-900">
-                <WrenchScrewdriverIcon className='h-8 w-8 text-white'/>
-            </span>
-          </div>
-          <div>My <div className="main-gradient" id="tools">Toolbox</div> </div>
-        </div>
-      </div>
-
-      <div className="my-10 flex items-center justify-center flex-col container mx-auto rounded-xl bg-orange-400 py-10">
-        <h3 className="five-title font-outfit font-medium tracking-tight text-white">My <span className="underline">Core</span> Tech Stack:</h3>
-        <div className="flex justify-center gap-8 flex-wrap  py-10 px-4 md:px-20 w-full rounded-lg">
-          {projectStarterPack.map((tool, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-sm relative z-[30] p-6 rounded-lg text-center w-max"
-            >
-              <img
-                src={tool.image}
-                alt={tool.text}
-                className="w-max px-4 h-20 mx-auto mb-4"
-              />
-              <p className="text-lg font-outfit">{tool.text}</p>
-            </div>
-          ))}
-
-          <div
-            className="bg-white shadow-sm relative p-6 rounded-lg text-center w-max "
+    <section id="tools" className="shell scroll-mt-24 pb-24 sm:pb-32">
+      <div className="grid gap-10 md:grid-cols-[minmax(12rem,0.7fr)_minmax(0,1.3fr)] md:gap-16 lg:gap-24">
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.65 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <h2 className="max-w-[8ch] font-display text-[clamp(1.9rem,4vw,3.4rem)] font-semibold leading-[1.02] tracking-[-0.045em] text-ink">
+            I work with
+          </h2>
+          <motion.span
+            className="mt-5 block w-max rotate-3 font-display text-2xl text-ember-dark"
+            aria-hidden="true"
+            initial={reduceMotion ? false : { opacity: 0, x: -7, rotate: -5 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 3 }}
+            viewport={{ once: true }}
+            transition={{ delay: reduceMotion ? 0 : 0.2, type: 'spring', stiffness: 260, damping: 19 }}
           >
-            <div className="p-4 hidden sm:block bg-white shadow-md rounded-md gap-y-2 absolute -top-6 -right-24 border-2 border-orange-900">
-              <img 
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" 
-                alt="PostgreSQL" 
-                className="w-20"
-              />
-              <p className="text-md font-outfit">+ PostgreSQL</p>
-            </div>
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-              className="w-max px-4 h-20 mx-auto mb-4"
-            />
-            <p className="text-lg font-outfit">MySQL</p>
-          </div>
+            →
+          </motion.span>
+        </motion.div>
 
+        <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 sm:gap-y-12">
+          {groups.map((group, index) => (
+            <motion.div
+              key={group.title}
+              custom={index}
+              variants={groupVariants}
+              initial={reduceMotion ? false : 'hidden'}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <h3 className="font-display text-base font-semibold tracking-[-0.015em] text-ink">
+                {group.title}
+              </h3>
+              <ul className="mt-4 flex flex-wrap gap-x-1.5 gap-y-2 text-[0.95rem] leading-relaxed text-ink-soft">
+                {group.tools.map((tool, toolIndex) => (
+                  <li key={tool} className="inline-flex items-center">
+                    <motion.span
+                      className="group inline-flex cursor-default items-center gap-1 py-0.5 text-ink-soft transition-colors duration-200 hover:text-ink"
+                      whileHover={reduceMotion ? undefined : { x: 2 }}
+                      transition={{ type: 'spring', stiffness: 420, damping: 27 }}
+                    >
+                      <span className="bg-[linear-gradient(#0a0a0a,#0a0a0a)] bg-[length:0_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-200 group-hover:bg-[length:100%_1px]">
+                        {tool}
+                      </span>
+                      <span
+                        className="w-0 overflow-hidden text-amber-dark opacity-0 transition-all duration-200 group-hover:w-3 group-hover:opacity-100"
+                        aria-hidden="true"
+                      >
+                        ↗
+                      </span>
+                    </motion.span>
+                    {toolIndex < group.tools.length - 1 && (
+                      <span className="ml-1.5 text-ink-faint" aria-hidden="true">
+                        ·
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </div>
-
-
-
-    <div className="max-w-[100rem] mx-auto space-y-10">
-      <h3 className="flex items-center justify-center w-full text-center five-title font-outfit font-medium tracking-tight">
-        My Skills & Technologies
-      </h3>
-      <div className="flex mx-2 lg:mx-10">
-          <Column title="Miscellaneous" tools={miscellaneous} />
-      </div>
-    </div>
-
-
-
-    </>
-  );
+    </section>
+  )
 }

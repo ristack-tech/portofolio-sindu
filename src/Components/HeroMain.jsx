@@ -1,76 +1,198 @@
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
+import { useEffect, useRef, useState } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
+
+const revealItem = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.48, ease: [0.16, 1, 0.3, 1] },
+  },
+}
 
 export default function HeroMain() {
+  const [isLaughing, setIsLaughing] = useState(false)
+  const laughTimer = useRef(null)
+  const reduceMotion = useReducedMotion()
+
+  useEffect(() => () => window.clearTimeout(laughTimer.current), [])
+
   const handleNavigationClick = (event, target) => {
-    event.preventDefault();
-    const element = document.querySelector(target);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+    const element = document.querySelector(target)
+    if (!element) return
+
+    event.preventDefault()
+    element.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' })
+  }
+
+  const laughForAMoment = () => {
+    window.clearTimeout(laughTimer.current)
+    setIsLaughing(true)
+    laughTimer.current = window.setTimeout(() => setIsLaughing(false), 1400)
+  }
 
   return (
-    <>
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#de8c52] from-30% to-[#4133d8] via-[#d21d23] opacity-30 sm:left-[calc(50%-30rem)] sm:bottom-[-20rem] sm:w-[81.1875rem]"
-            style={{
-              clipPath:
-                "polygon(28.22% 33.13%, 37.2% 26.09%, 48.37% 23.76%, 60.27% 26.09%, 66.68% 29.23%, 70.05% 35.52%, 72.34% 46.86%, 71.78% 53.33%, 70.05% 61.09%, 62.84% 64.45%, 51.31% 69.45%, 38.91% 67.34%, 28.22% 57.35%, 23.5% 43.51%)",
-            }}
-          />
-        </div>
-        <div className="mx-auto max-w-5xl pb-32 sm:pb-48 lg:pb-56 lg:pt-16 sm:pt-8">
-          <div className="text-center">
-            <span className="rounded-full font-outfit px-3 py-1 text-sm transition transform hover:scale-[1.05] duration-300 leading-6 text-white bg-[#704421] select-none cursor-text">
-              FULLSTACK DEVELOPER · TECHNICAL PROJECT LEAD
-            </span>
-            <h1 className="mt-4 text-5xl tracking-tight font-semibold text-black sm:text-9xl font-outfit">
-              Hi There, I'm <span className="main-gradient">Sindu</span>
-            </h1>
-            <p className="mt-6 text-xl sm:text-3xl leading-8 text-black font-outfit">
-              I design
-              <span className="main-gradient font-semibold ml-2">
-                business solutions that deliver impact.
-              </span>
-            </p>
+    <section className="relative flex min-h-[calc(100dvh-4.5rem)] items-center overflow-hidden border-b border-line bg-white py-10 sm:py-14 lg:py-16">
+      <motion.div
+        className="shell grid items-center gap-8 md:grid-cols-12 md:gap-8 lg:gap-10"
+        initial={reduceMotion ? false : 'hidden'}
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: reduceMotion ? 0 : 0.09 },
+          },
+        }}
+      >
+        <div className="relative z-10 md:col-span-7">
+          <motion.p
+            variants={revealItem}
+            className="flex items-center gap-3 text-sm font-medium text-ink-soft"
+          >
+            <motion.span
+              className="h-2 w-2 shrink-0 bg-ember"
+              aria-hidden="true"
+              initial={reduceMotion ? false : { scale: 0, rotate: -20 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.1, type: 'spring', stiffness: 420, damping: 20 }}
+            />
+            Semarang, Indonesia · available for interesting work
+          </motion.p>
 
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#work"
-                className="rounded-md bg-red-500 px-3.5 py-2.5 text-xl text-white shadow-xl shadow-red-300/50 font-outfit w-40 h-15 flex items-center justify-center transform transition hover:scale-105"
-                onClick={(event) => handleNavigationClick(event, "#work")}
+          <motion.h1
+            variants={revealItem}
+            className="mt-6 max-w-[13ch] font-display text-[clamp(2.7rem,6.2vw,4.5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-ink"
+          >
+            I build systems that make complicated things feel{' '}
+            <span className="relative inline-block">
+              simple.
+              <motion.span
+                aria-hidden="true"
+                className="absolute -bottom-1 left-0 h-[3px] w-full origin-left bg-ember"
+                initial={reduceMotion ? false : { scaleX: 0, rotate: -1 }}
+                animate={{ scaleX: 1, rotate: -1 }}
+                transition={{ delay: reduceMotion ? 0 : 0.62, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              />
+            </span>
+          </motion.h1>
+
+          <motion.p
+            variants={revealItem}
+            className="mt-6 max-w-[52ch] text-base leading-relaxed text-ink-soft sm:text-lg"
+          >
+            Backend-focused Informatics student building APIs, IoT infrastructure,
+            and products that make complex systems easier to use.
+          </motion.p>
+
+          <motion.div
+            variants={revealItem}
+            className="mt-8 flex flex-wrap items-center gap-5"
+          >
+            <motion.a
+              href="#work"
+              onClick={(event) => handleNavigationClick(event, '#work')}
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-ink bg-ember px-5 py-2.5 text-sm font-semibold text-ink shadow-press"
+              whileHover={reduceMotion ? undefined : { x: 1, y: -2 }}
+              whileTap={reduceMotion ? undefined : { x: 3, y: 3, boxShadow: '0 0 0 #0a0a0a' }}
+              transition={{ type: 'spring', stiffness: 430, damping: 24 }}
+            >
+              Explore my work
+            </motion.a>
+            <motion.a
+              href="https://github.com/Sinduaditya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex min-h-11 items-center gap-2 rounded-lg px-1 text-sm font-semibold text-ink"
+              whileHover={reduceMotion ? undefined : { x: 2 }}
+            >
+              GitHub
+              <span
+                className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                aria-hidden="true"
               >
-                View Work
-              </a>
-              <a
-                href="#contact"
-                className="text-xl leading-6 text-black font-outfit transform transition hover:scale-105"
-                onClick={(event) => handleNavigationClick(event, "#contact")}
-              >
-                Contact Me <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
+                ↗
+              </span>
+            </motion.a>
+          </motion.div>
+
+          <motion.p
+            variants={revealItem}
+            className="mt-8 max-w-[13rem] border-t border-line pt-4 font-mono text-[0.72rem] leading-relaxed text-ink-soft sm:max-w-[20rem] sm:text-[0.78rem] md:max-w-none"
+          >
+            LARAVEL / POSTGRESQL / DOCKER / IOT / REACT
+          </motion.p>
         </div>
-        <div
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-          aria-hidden="true"
+
+        <motion.div
+          className="absolute -bottom-3 right-[-2.75rem] w-[14rem] sm:right-[-1rem] sm:w-[17rem] md:relative md:bottom-auto md:right-auto md:col-span-5 md:mx-auto md:w-full md:max-w-[24rem] lg:max-w-[28rem]"
+          initial={reduceMotion ? false : { opacity: 0, x: 28, rotate: 2 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{
+            delay: reduceMotion ? 0 : 0.48,
+            type: 'spring',
+            stiffness: 115,
+            damping: 17,
+          }}
         >
-          <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#c7449b] from-50% to-[#efa717] to-40% via-[#c51010] opacity-30 sm:left-[calc(40%+36rem)] sm:bottom-[20rem] sm:w-[80.1875rem] sm:h-[60rem]"
-            style={{
-              clipPath:
-                "polygon(28.29% 33.22%, 37.29% 26.17%, 48.49% 23.83%, 60.42% 26.17%, 66.84% 29.32%, 70.23% 35.62%, 72.52% 47%, 71.96% 53.49%, 70.23% 61.27%, 63% 64.64%, 51.44% 69.65%, 39.01% 67.54%, 28.29% 57.52%, 23.56% 43.63%)",
-            }}
-          />
-        </div>
-      </div>
-    </>
-  );
+          <motion.span
+            aria-hidden="true"
+            className="absolute right-1 top-[17%] z-10 rotate-6 font-mono text-[0.68rem] text-ink-soft sm:right-0"
+            initial={reduceMotion ? false : { opacity: 0, x: -4 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: reduceMotion ? 0 : 0.9 }}
+          >
+            hover me :)
+          </motion.span>
+
+          <button
+            type="button"
+            className="relative block aspect-square w-full rounded-[16px] focus-visible:ring-offset-4"
+            aria-label="Ubah ekspresi karakter Sindu"
+            aria-pressed={isLaughing}
+            onPointerEnter={() => setIsLaughing(true)}
+            onPointerLeave={() => setIsLaughing(false)}
+            onFocus={() => setIsLaughing(true)}
+            onBlur={() => setIsLaughing(false)}
+            onClick={laughForAMoment}
+          >
+            <motion.img
+              src="/illustrations/face-shy.png"
+              alt=""
+              width="1254"
+              height="1254"
+              fetchPriority="high"
+              draggable="false"
+              className="absolute inset-0 h-full w-full select-none object-contain"
+              animate={{ opacity: isLaughing ? 0 : 1, scale: isLaughing && !reduceMotion ? 0.98 : 1 }}
+              transition={{ duration: reduceMotion ? 0 : 0.18 }}
+            />
+            <motion.img
+              src="/illustrations/face-laugh.png"
+              alt=""
+              width="1254"
+              height="1254"
+              draggable="false"
+              className="absolute inset-0 h-full w-full select-none object-contain"
+              initial={false}
+              animate={{ opacity: isLaughing ? 1 : 0, scale: isLaughing && !reduceMotion ? [0.98, 1.02, 1] : 1 }}
+              transition={{ duration: reduceMotion ? 0 : 0.22, ease: 'easeOut' }}
+            />
+          </button>
+
+          <motion.span
+            aria-hidden="true"
+            className="absolute bottom-[19%] left-[6%] font-display text-2xl text-ember"
+            animate={
+              isLaughing && !reduceMotion
+                ? { rotate: [0, -12, 8, 0], scale: [0.8, 1.15, 1] }
+                : { rotate: 0, scale: 1 }
+            }
+            transition={{ duration: 0.35 }}
+          >
+            *
+          </motion.span>
+        </motion.div>
+      </motion.div>
+    </section>
+  )
 }

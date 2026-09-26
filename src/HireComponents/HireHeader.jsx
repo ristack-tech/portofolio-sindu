@@ -1,104 +1,85 @@
-import { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation';
 
-const navigation = [
-  { name: 'How it Works', href: '#about' },
-  { name: 'General Pricing', href: '#work' },
-  { name: 'Features', href: '#tools' },
-]
-
 export default function HireHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   const handleNavigationClick = (event, href) => {
     event.preventDefault();
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
-    setMobileMenuOpen(false); 
   };
 
   return (
-    <>
-      <div className="">
+    <section className="relative isolate overflow-hidden px-6 pt-14 lg:px-8">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 right-[-10%] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(192,86,33,0.20)_0%,rgba(192,86,33,0)_68%)] blur-2xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[-16rem] left-[-8%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(150,67,26,0.14)_0%,rgba(150,67,26,0)_70%)] blur-2xl"
+      />
 
-        <div className="relative isolate px-6 pt-14 lg:px-8">
-          <div
-            className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-            aria-hidden="true"
+      <div className="mx-auto max-w-5xl pb-28 pt-10 text-center sm:pb-40 lg:pb-48 lg:pt-16">
+        <p className="flex items-center justify-center gap-3 text-sm font-medium tracking-wide text-ink-soft">
+          <span className="h-2 w-2 shrink-0 bg-ember" aria-hidden="true" />
+          Freelance &amp; contract
+        </p>
+
+        <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-[-0.02em] text-ink sm:text-7xl">
+          Let&apos;s build
+        </h1>
+
+        <div className="my-8 font-display text-3xl font-semibold leading-tight tracking-[-0.02em] sm:text-5xl">
+          <TypeAnimation
+            sequence={[
+              'Scalable backend systems',
+              1500,
+              'IoT fleet management',
+              1500,
+              'Multi-tenant platforms',
+              1500,
+              'Real-time WebSockets',
+              1500,
+              'Modular ERP systems',
+              1500,
+            ]}
+            wrapper="span"
+            cursor={true}
+            repeat={Infinity}
+            className="main-gradient"
+          />
+        </div>
+
+        <p className="mx-auto mt-6 max-w-[46ch] text-lg leading-relaxed text-ink-soft sm:text-xl">
+          Tell me what the system has to do and who depends on it. I&apos;ll come
+          back with an architecture, a timeline, and a price.
+        </p>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+          <a
+            href="#features"
+            onClick={(event) => handleNavigationClick(event, '#features')}
+            className="rounded-lg bg-ember px-6 py-3 text-base font-medium text-paper shadow-press transition duration-200 hover:bg-ember-dark active:scale-[0.98]"
           >
-            <div
-              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#de8c52] from-30% to-[#4133d8] via-[#d21d23] opacity-30 sm:left-[calc(50%-30rem)] sm:bottom-[-20rem] sm:w-[81.1875rem]"
-              style={{
-                clipPath:
-                  'polygon(28.22% 33.13%, 37.2% 26.09%, 48.37% 23.76%, 60.27% 26.09%, 66.68% 29.23%, 70.05% 35.52%, 72.34% 46.86%, 71.78% 53.33%, 70.05% 61.09%, 62.84% 64.45%, 51.31% 69.45%, 38.91% 67.34%, 28.22% 57.35%, 23.5% 43.51%)',
-              }}
-            />
-          </div>
-          <div className="mx-auto max-w-7xl pb-32 sm:pb-48 lg:pb-56 lg:pt-16 sm:pt-8">
-            <div className="text-center">
-              <h1 className="text-5xl tracking-tight font-semibold text-black sm:text-8xl font-outfit leading-normal z-40">
-                Let's build
-              </h1>
-              <div className='main-gradient inline text-transparent bg-clip-text text-5xl tracking-tight font-semibold text-black sm:text-8xl font-outfit my-10 leading-normal z-40'>
-                <TypeAnimation
-                        sequence={[
-                            'Scalable Backend Systems',
-                            1500,
-                            'IoT Fleet Management',
-                            1500,
-                            'Multi-Tenant Platforms',
-                            1500,
-                            'Real-Time WebSockets',
-                            1500,
-                            'ERP Modular Systems',
-                            1500,
-                            () => {
-                            console.log('Sequence completed');
-                            },
-                        ]}
-                        wrapper="span"
-                        cursor={true}
-                        repeat={Infinity}
-                        style={{}}
-                    />
-                </div>
-              <p className="mt-6 text-xl sm:text-3xl leading-8 text-black font-outfit">
-                Let's design systems <span className='main-gradient font-semibold'>that deliver impact.</span>
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#features"
-                  className="rounded-md bg-red-500 px-3.5 py-2.5 text-xl text-white shadow-xl shadow-red-300/50 font-outfit w-40 h-15 flex items-center justify-center transform transition hover:scale-105"
-                  onClick={(event) => handleNavigationClick(event, "#features")}
-                >
-                 More Info
-                </a>
-                <a 
-                  href="https://tally.so/r/wLpGWy" 
-                  target='_blank'
-                  className="text-xl leading-6 text-black font-outfit transform transition hover:scale-105"
-                >
-                  Book Me<span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-            aria-hidden="true"
+            How it works
+          </a>
+          <a
+            href="https://tally.so/r/wLpGWy"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 text-base font-medium text-ink transition duration-200 hover:text-ember"
           >
-            <div
-              className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#c7449b] from-50% to-[#efa717] to-40% via-[#c51010] opacity-30 sm:left-[calc(40%+36rem)] sm:bottom-[20rem] sm:w-[80.1875rem] sm:h-[60rem]"
-              style={{
-                clipPath:
-                  'polygon(28.29% 33.22%, 37.29% 26.17%, 48.49% 23.83%, 60.42% 26.17%, 66.84% 29.32%, 70.23% 35.62%, 72.52% 47%, 71.96% 53.49%, 70.23% 61.27%, 63% 64.64%, 51.44% 69.65%, 39.01% 67.54%, 28.29% 57.52%, 23.56% 43.63%)',
-              }}
-            />
-          </div>
+            Book a call
+            <span
+              aria-hidden="true"
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            >
+              &rarr;
+            </span>
+          </a>
         </div>
       </div>
-    </>
-  )
+    </section>
+  );
 }

@@ -1,23 +1,22 @@
-import React from 'react'
 import HeaderStatic from './HeaderStatic'
 import foto from '../foto.jpg'
-import { FaLink } from "react-icons/fa6";
-import ContactSection from './Footer';
+import ContactSection from './ContactSection';
+import Footer from './Footer';
 
 const Learn = () => {
   return (
     <>
 
         <HeaderStatic />
-        <div className='font-outfit'>
+        <main id="main">
 
-            <div className="py-10 space-y-6 bg-[#faf6e8] px-4 pb-20">
+            <div className="py-14 space-y-6 px-4 pb-24">
               <div className='space-y-4 max-w-3xl mx-auto'>
-                <h1 className='five-title font-semibold'>
+                <h1 className='font-display five-title font-semibold'>
                   How I became a Fullstack Developer: <span className="main-gradient">a full journey from zero to production.</span>
                 </h1>
                 <div className="flex gap-x-4 py-4 items-center">
-                  <img src={foto} alt="Sindu Aditya"  className='h-14 w-14 object-cover rounded-full'/>
+                  <img src={foto} alt="Sindu Aditya"  className='h-14 w-14 object-cover rounded-xl'/>
                   <div className="">
                     <h4 className='text-xl'>Sindu Aditya Janadi</h4>
                     <p className='font-light'>September 2025 - 12 min read</p>
@@ -33,7 +32,7 @@ const Learn = () => {
                     Latar Belakang
                   </h3>
                   <div className='text-xl font-light leading-8 whitespace-pre-line'>
-                    I'm Sindu Aditya Janadi, Fullstack Developer & Technical Project Lead at Bengkel Koding since September 2024.
+                    I&apos;m Sindu Aditya Janadi, Fullstack Developer & Technical Project Lead at Bengkel Koding since September 2024.
                     I started diving deep into backend development because I saw how a well-built system can transform how an organization works.
                     <br />
                     <br />
@@ -122,7 +121,7 @@ const Learn = () => {
                     <br />
                     <br />
                     Tantangan lainnya adalah <span className="bh">role-based access control</span> — admin, manager, dan user biasa memiliki permission yang berbeda.
-                    Laravel's Gate dan Policy membantu saya mengimplementasikan ini dengan elegan.
+                    Laravel&apos;s Gate dan Policy membantu saya mengimplementasikan ini dengan elegan.
                   </div>
                 </div>
 
@@ -169,7 +168,7 @@ const Learn = () => {
                     Membangun Proyek Sendiri
                   </h3>
                   <div className='text-xl font-light leading-8 whitespace-pre-line'>
-                    I didn't just learn backend from tutorials. <span className="bh">I learned by building real projects.</span>
+                    I didn&apos;t just learn backend from tutorials. <span className="bh">I learned by building real projects.</span>
                     <br />
                     <br />
                     Mulai dari aplikasi sederhana sampai sistem enterprise — setiap proyek mengajarkan saya sesuatu yang baru.
@@ -182,7 +181,7 @@ const Learn = () => {
                     <span className="bh">Web E-Voting</span> mengajarkan saya tentang blockchain, enkripsi, dan keamanan data.
                     <br />
                     <br />
-                    If you want to learn backend, <span className="bh">start building something.</span> It doesn't have to be perfect, just start.
+                    If you want to learn backend, <span className="bh">start building something.</span> It doesn&apos;t have to be perfect, just start.
                   </div>
                 </div>
 
@@ -191,7 +190,7 @@ const Learn = () => {
                     DevOps & Deployment
                   </h3>
                   <div className='text-xl font-light leading-8 whitespace-pre-line'>
-                    A backend developer doesn't just write code — you also need to know how to <span className="bh">deploy and maintain</span> that system.
+                    A backend developer doesn&apos;t just write code — you also need to know how to <span className="bh">deploy and maintain</span> that system.
                     <br />
                     <br />
                     Saya mempelajari:
@@ -219,10 +218,10 @@ const Learn = () => {
                     Kesimpulan
                   </h3>
                   <div className='text-xl font-light leading-8 whitespace-pre-line'>
-                    Backend development is not easy to learn, but I wouldn't say it's hard either. What you need is <span className="bh">patience, consistency, and the willingness to build something.</span>
+                    Backend development is not easy to learn, but I wouldn&apos;t say it&apos;s hard either. What you need is <span className="bh">patience, consistency, and the willingness to build something.</span>
                     <br />
                     <br />
-                    Don't be afraid of errors. Don't be afraid of complex systems. Start small, learn the foundations, and build real projects.
+                    Don&apos;t be afraid of errors. Don&apos;t be afraid of complex systems. Start small, learn the foundations, and build real projects.
                     <br />
                     <br />
                     Every bug you fix, every system you deploy, every architecture you design — it all adds to your experience.
@@ -242,8 +241,9 @@ const Learn = () => {
               
             </div>
 
-        </div>
+        </main>
         <ContactSection />
+        <Footer />
     </>
   )
 }

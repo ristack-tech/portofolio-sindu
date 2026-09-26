@@ -2,17 +2,17 @@ import HeroMain from './Components/HeroMain'
 import AboutMe from './Components/AboutSection'
 import ToolsSection from './Components/ToolsSection'
 import { Projects } from './Components/Projects'
-import ContactSection from './Components/Footer'
-import WavyLine from './Components/WavyLine'
+import ContactSection from './Components/ContactSection'
+import Footer from './Components/Footer'
 import Header from './Components/Header'
-import ExtraProjectBottom from './Components/ExtraProjectsBottom'
+import Experience from './Components/Experience'
+import Awards from './Components/Awards'
 import { Helmet } from 'react-helmet';
-import BlogHome from './Components/BlogHome'
 
 function Homepage() {
 
   return (
-    <div>
+    <div id="top">
         <Helmet>
           <html lang='en'></html>
           <title>Sindu Aditya - Fullstack Developer & Technical Project Lead</title>
@@ -21,12 +21,16 @@ function Homepage() {
         </Helmet>
 
         <Header />
-        <HeroMain />
-        <AboutMe />
-        <ToolsSection />
-        <Projects />
-        <ExtraProjectBottom />
-        <ContactSection />
+        <main id="main">
+          <HeroMain />
+          <Projects />
+          <Experience />
+          <Awards />
+          <AboutMe />
+          <ToolsSection />
+          <ContactSection />
+        </main>
+        <Footer />
     </div>
   )
 }
