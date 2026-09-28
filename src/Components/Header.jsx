@@ -85,33 +85,19 @@ export default function Navbar() {
             aria-hidden="true"
           >
             Sindu
-            <motion.span
-              className="inline-block text-ember"
-              initial={reduceMotion ? false : { y: 0, rotate: 0 }}
-              animate={reduceMotion ? undefined : { y: [0, -5, 0], rotate: [0, 9, 0] }}
-              transition={{ delay: 0.35, duration: 0.45, ease: 'easeOut' }}
-            >
-              .
-            </motion.span>
+            <span className="text-ember">.</span>
           </motion.span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
-          {navigation.map((item, index) => {
+          {navigation.map((item) => {
             const isActive = active === item.name
 
             return (
-              <motion.a
+              <a
                 key={item.name}
                 href={item.href}
                 aria-current={isActive ? 'location' : undefined}
-                initial={reduceMotion ? false : { opacity: 0, y: -6 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: reduceMotion ? 0 : 0.08 + index * 0.04,
-                  duration: 0.35,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
                 className={`group relative py-2 text-sm font-medium transition-colors duration-200 ${
                   isActive ? 'text-ink' : 'text-ink-soft hover:text-ink'
                 }`}
@@ -121,12 +107,12 @@ export default function Navbar() {
                 <span className="absolute inset-x-0 -bottom-px h-px origin-left scale-x-0 bg-ink transition-transform duration-200 group-hover:scale-x-100" />
                 {isActive && (
                   <motion.span
-                    layoutId="active-navigation-dot"
+                    layoutId={reduceMotion ? undefined : 'active-navigation-dot'}
                     className="absolute -bottom-[5px] left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-ember"
-                    transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                    transition={reduceMotion ? { duration: 0 } : { type: 'spring', stiffness: 420, damping: 32 }}
                   />
                 )}
-              </motion.a>
+              </a>
             )
           })}
         </div>
@@ -153,7 +139,7 @@ export default function Navbar() {
           aria-hidden="true"
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: reduceMotion ? 0 : 0.2 }}
         />
 
         <Dialog.Panel
@@ -161,7 +147,7 @@ export default function Navbar() {
           className="fixed inset-x-3 top-3 overflow-hidden rounded-[14px] border border-line-strong bg-white px-5 pb-7 pt-5 shadow-hard"
           initial={reduceMotion ? false : { opacity: 0, y: -18, rotate: -1.5 }}
           animate={{ opacity: 1, y: 0, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 330, damping: 27 }}
+          transition={reduceMotion ? { duration: 0 } : { type: 'spring', stiffness: 330, damping: 27 }}
         >
           <div className="flex items-center justify-between border-b border-line pb-4">
             <span className="font-display text-xl font-semibold tracking-[-0.04em] text-ink">
@@ -178,23 +164,20 @@ export default function Navbar() {
           </div>
 
           <div className="mt-4 grid">
-            {navigation.map((item, index) => (
-              <motion.a
+            {navigation.map((item) => (
+              <a
                 key={item.name}
                 href={item.href}
                 className={`flex min-h-12 items-center justify-between border-b border-line px-1 font-display text-lg font-medium ${
                   active === item.name ? 'text-ember' : 'text-ink'
                 }`}
-                initial={reduceMotion ? false : { opacity: 0, x: 12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: reduceMotion ? 0 : 0.05 + index * 0.045 }}
                 onClick={(event) => handleNavigationClick(event, item.href)}
               >
                 {item.name}
                 <span className="font-mono text-sm" aria-hidden="true">
                   {active === item.name ? '•' : '↘'}
                 </span>
-              </motion.a>
+              </a>
             ))}
           </div>
 

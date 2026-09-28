@@ -11,7 +11,7 @@ const social = [
   { label: "GitHub", href: "https://github.com/Sinduaditya" },
   { label: "LinkedIn", href: "https://linkedin.com/in/sinduadityajanadi" },
   { label: "Email", href: "mailto:nduujanadi51@gmail.com" },
-  { label: "WhatsApp", href: "https://wa.me/62895629558923" },
+  { label: "WhatsApp", href: "https://wa.me/62895359455245" },
 ];
 
 function Footer() {
@@ -24,8 +24,8 @@ function Footer() {
               Sindu<span className="text-ember">.</span>
             </p>
             <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-ink-soft">
-              Fullstack developer and technical project lead based in Semarang,
-              Indonesia.
+              Full-stack developer and project manager working on academic,
+              fleet, and business systems.
             </p>
             <a
               href="https://buymeacoffee.com/sinduaditya"

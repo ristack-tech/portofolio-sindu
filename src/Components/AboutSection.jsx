@@ -24,26 +24,18 @@ export default function AboutMe() {
         <div className="mt-8 grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_17rem] lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
           <div>
             <p className="max-w-[25ch] font-display text-[clamp(1.65rem,3.6vw,2.75rem)] font-medium leading-[1.12] tracking-[-0.04em] text-ink">
-              I&apos;m an Informatics student who tends to end up somewhere between
-              backend systems, IoT, infrastructure, and project ownership.
+              I study Informatics at Universitas Dian Nuswantoro and work across
+              backend development, IoT systems, and project coordination.
             </p>
 
             <p className="mt-7 max-w-[58ch] text-base leading-relaxed text-ink-soft sm:text-lg">
-              I started in software engineering and now spend most of my time turning
-              complicated operational needs into systems people can actually rely on.
-              I care about the decisions behind the code: how it scales, how a team can
-              maintain it, and whether it solves the real problem.
+              My work spans academic platforms, fleet management, and internal business
+              tools. I like figuring out what a team actually needs, then building the
+              parts that make the day-to-day work easier.
             </p>
           </div>
 
-          <motion.div
-            className="relative ml-auto h-[16rem] w-[16rem] md:h-[19rem] md:w-[19rem] lg:h-[22rem] lg:w-[22rem]"
-            initial={reduceMotion ? false : { opacity: 0, x: 24, rotate: 2 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-            whileHover={reduceMotion ? undefined : { rotate: 2, y: -2 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ type: 'spring', stiffness: 145, damping: 19 }}
-          >
+           <div className="relative ml-auto h-[16rem] w-[16rem] md:h-[19rem] md:w-[19rem] lg:h-[22rem] lg:w-[22rem]">
             <img
               src="/illustrations/half-about.png"
               alt=""
@@ -53,36 +45,25 @@ export default function AboutMe() {
               draggable="false"
               className="h-full w-full select-none object-contain mix-blend-multiply"
             />
-            <motion.span
-              className="absolute right-[4%] top-[18%] font-mono text-sm text-ember-dark"
-              aria-hidden="true"
-              initial={reduceMotion ? false : { opacity: 0, rotate: -15, scale: 0.8 }}
-              whileInView={{ opacity: 1, rotate: 4, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: reduceMotion ? 0 : 0.3, type: 'spring', stiffness: 260, damping: 18 }}
-            >
-              *
-            </motion.span>
-          </motion.div>
+             <span
+               className="absolute right-[4%] top-[18%] font-mono text-sm text-ember-dark"
+               aria-hidden="true"
+             >
+               *
+             </span>
+           </div>
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-[2.5rem_minmax(0,1fr)] sm:items-start lg:ml-[12%] lg:max-w-[44rem]">
-          <motion.span
-            className="pt-3 font-display text-2xl text-amber-dark"
-            aria-hidden="true"
-            initial={reduceMotion ? false : { opacity: 0, x: -8, rotate: -8 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: reduceMotion ? 0 : 0.15, type: 'spring', stiffness: 260, damping: 20 }}
-          >
-            ↘
-          </motion.span>
+           <span className="pt-3 font-display text-2xl text-amber-dark" aria-hidden="true">
+             ↘
+           </span>
 
           <div className="rounded-lg bg-surface px-5 py-5 sm:px-6">
             <p className="font-mono text-[0.7rem] text-ink-soft">CURRENT</p>
             <p className="mt-2 max-w-[58ch] text-sm leading-relaxed text-ink sm:text-base">
-              I&apos;m leading FIK-Apps, working as a Research Assistant at Nexa IoT
-              Lab, and building products with ristack.tech.
+              I&apos;m working on a digital village website at Firstudio and building
+              business applications with RISTACK.
             </p>
           </div>
         </div>

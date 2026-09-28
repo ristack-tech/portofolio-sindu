@@ -3,31 +3,26 @@ import { motion, useReducedMotion } from 'motion/react'
 const recognitions = [
   {
     year: '2025',
-    title: '3rd Place · HITECH',
-    issuer: '[DUMMY] Add organizer name',
-    context: 'Blockchain e-voting with NFT-based vote verification.',
-    type: 'COMPETITION',
+    rank: '3rd',
+    title: 'HITECH',
+    context: 'Ethereum-based decentralized e-voting',
   },
   {
     year: '2024',
-    title: '2nd Place · IT FEST',
-    issuer: 'IPB University',
-    context: 'Klora · reward-based recycling platform.',
-    type: 'COMPETITION',
+    rank: '2nd',
+    title: 'IT FEST · IPB',
   },
   {
     year: '2024',
-    title: 'Top 10 · ECOTHON ASEAN',
-    issuer: '[DUMMY] Add organizer name',
-    context: 'Klora · sustainability solution.',
-    type: 'REGIONAL',
+    rank: 'Top 10',
+    title: 'ECOTHON ASEAN',
+    context: 'Klora · recycling and sustainability',
   },
   {
     year: '2024',
-    title: '3rd Place · DINACOM',
-    issuer: '[DUMMY] Add organizer name',
-    context: 'Decentralized blockchain e-voting system.',
-    type: 'COMPETITION',
+    rank: '3rd',
+    title: 'DINACOM',
+    context: 'Ethereum-based decentralized e-voting',
   },
 ]
 
@@ -36,112 +31,81 @@ export default function Awards() {
 
   return (
     <section id="awards" className="shell scroll-mt-24 pb-24 sm:pb-32">
-      <motion.div
-        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <h2 className="font-display text-[clamp(1.7rem,3vw,2.2rem)] font-semibold tracking-[-0.035em] text-ink">
-          Awards &amp; recognition
-        </h2>
-        <p className="mt-2 text-base text-ink-soft">
-          A few milestones worth keeping.
-        </p>
-      </motion.div>
+      <h2 className="font-display text-[clamp(1.7rem,3vw,2.2rem)] font-semibold tracking-[-0.035em] text-ink">
+        Awards &amp; recognition
+      </h2>
 
-      <motion.article
-        className="relative mt-12 border-y border-line bg-surface px-5 py-7 sm:px-8 sm:py-8"
-        initial={reduceMotion ? false : { opacity: 0, y: 10, rotate: -0.6 }}
-        whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-        viewport={{ once: true, amount: 0.55 }}
-        transition={{ type: 'spring', stiffness: 180, damping: 22 }}
-      >
-        <motion.span
-          className="absolute -top-4 right-5 flex h-8 w-8 items-center justify-center bg-amber-soft font-display text-xl font-semibold text-ember-dark sm:right-8"
-          aria-hidden="true"
-          initial={reduceMotion ? false : { scale: 0, rotate: -18 }}
-          whileInView={{ scale: 1, rotate: 4 }}
-          viewport={{ once: true }}
-          transition={{ delay: reduceMotion ? 0 : 0.18, type: 'spring', stiffness: 330, damping: 18 }}
-        >
-          *
-        </motion.span>
-
-        <div className="grid gap-6 md:grid-cols-[8rem_minmax(0,1fr)_auto] md:items-start">
-          <div>
-            <p className="font-mono text-[0.7rem] text-ember-dark">SCHOLARSHIP</p>
-            <p className="mt-1 font-mono text-[0.7rem] text-ink-soft">COHORT 41</p>
-          </div>
-
-          <div>
-            <h3 className="font-display text-xl font-semibold tracking-[-0.025em] text-ink sm:text-2xl">
+      <section aria-labelledby="scholarship-title" className="mt-10 border-y border-line sm:mt-12">
+        <div className="grid items-center gap-3 sm:grid-cols-[minmax(0,1fr)_15rem] sm:gap-8 md:grid-cols-[minmax(0,1fr)_19rem]">
+          <motion.div
+            className="pt-8 sm:py-12"
+            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.65 }}
+             transition={{ duration: reduceMotion ? 0 : 0.5, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <p className="font-mono text-[0.72rem] text-ink-soft">
+              SCHOLARSHIP / 2025–2026
+            </p>
+            <h3 id="scholarship-title" className="mt-5 max-w-[16ch] font-display text-[clamp(2rem,4vw,3.3rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-ink">
               Beswan Djarum 41
             </h3>
-            <p className="mt-1 text-sm text-ink-soft">Djarum Foundation</p>
-            <p className="mt-4 max-w-[58ch] font-mono text-[0.78rem] leading-relaxed text-ink-soft">
-              [DUMMY] Add the selection scope, program period, and the part of the
-              scholarship experience that matters most.
+            <p className="mt-5 max-w-[46ch] text-base leading-relaxed text-ink-soft">
+              Selected for Djarum Beasiswa Plus, cohort 41, for the 2025/2026 academic year.
             </p>
-          </div>
+          </motion.div>
 
-          <span className="w-max border-b border-ember pb-1 font-mono text-[0.7rem] text-ink">
-            CURRENT
+          <motion.img
+            src="/illustrations/half-proud.png"
+            alt=""
+            width="1254"
+            height="1254"
+            loading="lazy"
+            draggable="false"
+            className="mx-auto h-44 w-44 select-none object-contain mix-blend-multiply sm:h-60 sm:w-60 md:h-[19rem] md:w-[19rem]"
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+             transition={{ delay: reduceMotion ? 0 : 0.12, duration: reduceMotion ? 0 : 0.55, ease: [0.16, 1, 0.3, 1] }}
+          />
+        </div>
+      </section>
+
+      <section aria-labelledby="recognition-title" className="mt-16 sm:mt-20">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <h3 id="recognition-title" className="font-display text-[clamp(1.4rem,2.6vw,1.9rem)] font-semibold tracking-[-0.035em] text-ink">
+            Competition recognition
+          </h3>
+          <span className="font-mono text-[0.72rem] text-ink-soft">
+            {String(recognitions.length).padStart(2, '0')} RECORDS
           </span>
         </div>
-      </motion.article>
 
-      <div className="mt-14 flex items-baseline justify-between gap-5">
-        <h3 className="font-display text-lg font-semibold tracking-[-0.02em] text-ink">
-          Recognition archive
-        </h3>
-        <span className="font-mono text-[0.7rem] text-ink-soft">
-          {recognitions.length} ENTRIES
-        </span>
-      </div>
-
-      <ol className="mt-5 border-t border-line">
-        {recognitions.map((recognition, index) => (
-          <motion.li
-            key={`${recognition.year}-${recognition.title}`}
-            className="group grid gap-3 border-b border-line px-2 py-6 transition-colors duration-200 hover:bg-surface sm:px-3 md:grid-cols-[6rem_minmax(0,1fr)_7rem] md:items-baseline md:gap-6"
-            initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.45 }}
-            transition={{
-              delay: reduceMotion ? 0 : index * 0.045,
-              duration: 0.4,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-            <span className="font-mono text-[0.75rem] text-ink-soft">
-              {recognition.year}
-            </span>
-
-            <div className="min-w-0">
-              <h4 className="font-display text-[1.05rem] font-semibold tracking-[-0.02em] text-ink transition-transform duration-200 group-hover:translate-x-0.5">
+        <ol className="mt-7 grid border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+          {recognitions.map((recognition, index) => (
+            <li
+              key={`${recognition.year}-${recognition.title}`}
+              className={`flex min-h-[13rem] flex-col border-b border-line px-1 py-6 sm:px-5 lg:border-b-0 lg:px-6 ${index % 2 === 1 ? 'sm:border-l' : ''} ${index > 1 ? 'lg:border-l' : ''}`}
+            >
+              <span className="flex items-center justify-between font-mono text-[0.7rem] text-ink-soft">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{recognition.year}</span>
+              </span>
+              <p className="mt-7 font-display text-[clamp(1.65rem,2.8vw,2.3rem)] font-semibold leading-none tracking-[-0.045em] text-ink">
+                {recognition.rank}
+              </p>
+              <h4 className="mt-2 font-display text-base font-semibold tracking-[-0.02em] text-ink">
                 {recognition.title}
               </h4>
-              <p
-                className={`mt-1 text-sm ${
-                  recognition.issuer.startsWith('[DUMMY]')
-                    ? 'font-mono text-[0.75rem] text-ink-soft'
-                    : 'text-ink-soft'
-                }`}
-              >
-                {recognition.issuer}
-              </p>
-              <p className="mt-2 max-w-[55ch] text-sm leading-relaxed text-ink-soft">
-                {recognition.context}
-              </p>
-            </div>
-
-            <span className="font-mono text-[0.68rem] text-ink-soft md:text-right">
-              {recognition.type}
-            </span>
-          </motion.li>
-        ))}
-      </ol>
+              {recognition.context && (
+                <p className="mt-3 max-w-[28ch] text-sm leading-relaxed text-ink-soft">
+                  {recognition.context}
+                </p>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
     </section>
   )
 }

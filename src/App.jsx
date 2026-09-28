@@ -2,11 +2,9 @@ import './App.css'
 import { useState } from 'react';
 import Homepage from './Homepage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Hire from './Hire';
 import TallyFormEmbed from './TallyForm';
 import { Analytics } from '@vercel/analytics/react';
 import { MdClose } from "react-icons/md";
-import Learn from './Components/Learn';
 import NotFound from './NotFound';
 import { Privacy, Terms } from './Legal';
 
@@ -31,18 +29,8 @@ function App() {
           />
 
           <Route
-            path="/hire"
-            element={<Hire />}
-          />
-
-          <Route
             path="/form"
             element={<TallyFormEmbed />}
-          />
-
-          <Route
-            path="/learn"
-            element={<Learn />}
           />
 
           <Route path="/privacy" element={<Privacy />} />
@@ -56,7 +44,7 @@ function App() {
         <div
           role="complementary"
           aria-label="Availability"
-          className="z-50 hidden max-w-[22rem] rounded-2xl border border-line bg-paper p-5 pr-8 font-sans shadow-lift slide-in-right lg:fixed lg:bottom-5 lg:right-5 lg:block"
+           className="z-50 hidden max-w-[22rem] rounded-2xl border border-line bg-paper p-5 pr-8 font-sans shadow-lift lg:fixed lg:bottom-5 lg:right-5 lg:block"
         >
           <button
             type="button"

@@ -90,8 +90,8 @@ const CONTACT_LINKS = [
   },
   {
     label: 'WhatsApp',
-    value: '+62 895-6295-58923',
-    href: 'https://wa.me/62895629558923',
+    value: '+62 895-3594-55245',
+    href: 'https://wa.me/62895359455245',
     external: true,
   },
 ]
@@ -100,7 +100,7 @@ const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/Sinduaditya' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/sinduadityajanadi' },
   { label: 'Email', href: 'mailto:nduujanadi51@gmail.com' },
-  { label: 'WhatsApp', href: 'https://wa.me/62895629558923' },
+  { label: 'WhatsApp', href: 'https://wa.me/62895359455245' },
 ]
 
 const pct = (value, total) => `${((value / total) * 100).toFixed(3)}%`
@@ -344,7 +344,7 @@ export default function ContactSection() {
                 key="locked"
                 initial={reduceMotion ? false : { opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
+                exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
                 transition={{ duration: reduceMotion ? 0 : 0.35 }}
               >
                 <p className="mt-6 max-w-[42ch] text-base leading-relaxed text-ink-soft">
@@ -359,7 +359,7 @@ export default function ContactSection() {
                   whileTap={
                     reduceMotion
                       ? undefined
-                      : { x: 3, y: 3, boxShadow: '0 0 0 #0a0a0a' }
+                      : { x: 3, y: 3 }
                   }
                   transition={{ type: 'spring', stiffness: 430, damping: 24 }}
                 >
@@ -379,12 +379,9 @@ export default function ContactSection() {
                   className="group mt-6 inline-flex items-baseline gap-2 font-display text-[clamp(2rem,4.5vw,3.1rem)] font-semibold tracking-[-0.04em] text-ember-dark transition-colors duration-200 hover:text-ember"
                   initial={reduceMotion ? false : { opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    delay: reduceMotion ? 0 : 0.12,
-                    type: 'spring',
-                    stiffness: 240,
-                    damping: 20,
-                  }}
+                  transition={reduceMotion
+                    ? { duration: 0 }
+                    : { delay: 0.12, type: 'spring', stiffness: 240, damping: 20 }}
                 >
                   Let&apos;s talk.
                   <span
@@ -470,12 +467,9 @@ export default function ContactSection() {
                   }}
                   initial={reduceMotion ? false : { opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 260,
-                    damping: 17,
-                    delay: reduceMotion ? 0 : 0.05,
-                  }}
+                  transition={reduceMotion
+                    ? { duration: 0 }
+                    : { type: 'spring', stiffness: 260, damping: 17, delay: 0.05 }}
                 />
               )}
 
